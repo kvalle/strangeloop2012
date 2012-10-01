@@ -1,1 +1,3 @@
 Her ligger notater fra de foredragene jeg var på. Selv om notatene tidvis kan være både utsammenhengende og ufullstendige, bør de gi et inntrykk av hva hvert enkelt foredrag handlet om. I tilleg har jeg forsøkt å notere hvorvidt foredraget er verdt å se -- og eventuelt hvem det kan være interessant for -- når videoer av foredragene publiseres på [infoq.com](http://www.infoq.com/strange_loop/) i månedene etter konferansen.
+
+- [Dag 0, Emerging Languages Camp](https://github.com/kvalle/strangeloop2012/blob/master/notater/dag-0-elc.md)
