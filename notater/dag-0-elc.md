@@ -96,7 +96,7 @@ spørringer: (`x` vil her returneres som john og mary)
 
 	?- ancestor(bill,X).
 
-Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det finnes flere implementasjoner, slik som Datomic datomic Cascalog.
+Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det finnes flere implementasjoner, slik som Datomic og Cascalog.
 
 *Grei innføring til konseptet. Verdt å se om en, som meg, ikke er kjent med Datalog eller noen av implementasjonene fra før.*
 
