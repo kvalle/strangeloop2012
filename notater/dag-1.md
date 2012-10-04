@@ -131,8 +131,8 @@ Til sist fikk vi også et eksempel på generering av et *twine* par. Altså to p
   - Funksjoner som verdier
   - Protokoller
   - Namespaces
-  - REPL koblet opp mot browseren
-  - Macroer
+  - REPL koblet opp mot browseren (og tilgjengelig [på nett](http://himera.herokuapp.com))
+  - Makroer
 - Han prater om bakgrunn og implementsjonsdetaljer for ClojureScript
   - Forklarer hvordan de har tenkt og gått frem for å transpirere en del av Clojures semantikk til (god) JS-kode
   - Mange av forskjellene mellom JS og Clojure -- fleksibilitet en har i Clojure men ikke i JS (og motsatt?) -- kan føre til ineffektiv JS.
@@ -170,7 +170,99 @@ Det var en hel del gode poenger, men de brukte for mye tid på å prate om hvord
 
 
 ## The Database as a Value (Rich Hickey)
+
+Etter keynoten på fjorårets konferanse, "Simple Made Easy", var nok dette et av foredragene jeg hadde sett mest frem til i forkant, og jeg ble ikke skuffet.
+Hickey pratet om sine nye tanker rundt databaser, som han har konkretisert i Datomic -- en "informasjons-orientert" database med et konsept om *tid*.
+
+Idéene er i stor grad hentet fra [Out of the Tar Pit](http://shaffner.us/cs/papers/tarpit.pdf) (2006) av Ben Moseley
+ og Peter Marks.
+De argumenterer for å minimere muterbar tilstand, å flytte den muterbare tilstanden som gjenstår inn i relasjoner, og å spesifisere oppførselen (manipulasjonen av relasjonelle data) i deklarative/logiske/rent funksjonelle språk.
+
 ![Første slide](https://raw.github.com/kvalle/strangeloop2012/master/bilder/hickey-the-database-as-a-value.jpg)
 
+Databaser er komplekse!
+- Sentrert rundt *tilstand* av data
+- Samme query kan gir forskjellige resultater
+- Oppdatering "dårlig definert"
+	- Informasjonen er sentrert rundt "steder" (celler, rader) som endrer tilstand
+	- Hva endrer seg? Hva er gammelt, hva er nåverdi?
+	- Transaksjoner...
+
+*Sentralt spørsmål: Hva vil det si å oppdatere noe?*
+- La oss i stedet se på databasen som en immutable datastruktur -- et *expanding value*
+- Databasen som et voksende tre (struktur)
+  - Minner mye om måten versjonskontrollsystemer fungerer
+- Vi beholder alle gamle verdier, legger til nye ved sien av.
+  - Trenger et begrep om tid for å holde styr på når ting "dukket opp"
+
+> Orddefinisjon: "fact"
+> - "an event or thing known to have happened or existed" 
+> - fra latinske "factum" som betyr "noe som er gjort"
+> - krever et begrep om tid!
+
+Datomic: En immutable database som er sentrert rundt et begrep om tid.
+
+- Sentrale konsepter:
+  - *Time*
+  - *Identity* ← Entity/label for noe som består tross at det endres (eksempler: en person er den samme selv om den endrer tilstand, et slideshow er det samme selv om sliden som vises byttes over tid)
+  - *Value* ← Immutable!
+  - *State* ← Snapshot av den verdien en identitet har på et gitt tidspunkt
+- Persistente datastrukturer representrert som *trær* med "structural sharing" (al'a Clojure)
+  - Liknende strukturer deler like subtrær
+- Prossessering av data kan brytes ned til "assertions and retractions of data"
+- Transaksjonsfunksjoner:
+  - Funksjon som tar inn *verdien av databasen* pluss argumenter, og returnerer transakksjonsdata 
+  - Returnerer altså *assertions* og *retractions* om data
+- DBer er argumenter til spørringer, og ikke en implisitt verdi som henger på en connection
+  - Forenkler testing
+- Tidsreise!
+  - Ved å lagre data på denne måten kan en gjøre spørringer tilbake i tid: `db.asOf(...)`	
+  - Spørringer over tidsintervaller: `db.since(...)`
+  - Eller frem i tid: Hvordan ville verden sett ut hvis vi hadde foretatt transaksjonen `tx`? `db.with(tx)`
+  - (Men vi er som oftest kun interessert i de nyeste dataene?)
+- Oppdeling av ting vi forbinder med databaser til 
+  - *prosessering* (transaksjoner, indeksering, output) og 
+     - Krever koordinering
+     - Må ligge sentralisert (som en tjeneste alle klienter av databasen benyter seg av)
+  - *observering* (spørringer, indekser, input).
+     - Krever ikke koordinering
+     - Kan gjøres distribuert (på klientene)!
+
+*Absolutt et foredrag det er verdt å få med seg.*
+
+
 ## Pushing the Limits of Web Browsers (Lars Bak)
+
+Lars Bak ble i 2006 ansatt i Google for å øke ytelsen på JavaScript. 
+
+> "I had never looked at it. What a strange language. I thought at least it will be fun to make it fast."
+
+Tidligere hadde han jobbet med ytelsesforbedringer på blant annet Strongtalk VM, Hotspot VM og OOVM Smalltalk.
+Hele foredraget hans er gjennomsyret av en intens interesse for å forbedre ytelse. 
+Hastighet er åpenbart noe av det viktigste for Bak, og han har noen ganske imponerende resultater å vise til.
+
+Etter å ha gjort en killer jobb med V8 fikk han i oppgave å lage Dart. 
+
+- Adresserer mye av det Bak mener er galt med JS
+- Bygget for å kjøre raskt på egen VM (som er del av Chrome) og kompilerer i tillegg til JS
+- Optional statisk typing (kan kode uten typer i starten, og gradvis introdusere der de trengs)
+- Klasse-basert (enkelt) arv
+- Interfaces med default implementasjon
+- Real lexical scoping
+- Single-threaded
+- Compact and readable
+
+> "If you don't have curly braces in your language, you can't sell it." (Dart har krøllparenteser)
+
+Ting Lars har lært gjennom karrieren:
+- Alltid start med et lite team
+- Fokuser på å løse de vanskeligste problemene først
+- Kompetitive situasjoner fører til motiverte team
+  - (Konkurranse for teamet samlet mot ytre krefter/konkurrenter, ikke innad i teamet)
+- Ansett og jobb kun sammen med folk som er smartere enn deg
+- "Open source projects are great"
+  - Hjelper industrien
+  - "Keeps your work honest"
+  - Er ikke tvunget til å vente på release av ny versjon for å få fikset bugs
+- "When building for performance, be sure to track performance from day one"
 
