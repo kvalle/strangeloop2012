@@ -42,21 +42,22 @@ Strengt tatt lite som er direkte knyttet il ØMQ, men når stendene det nevnes f
 Foredraget var strukturert som en rekke "arkitektur one-liners" som han pratet rundt.
 Noen eksempler:
 
-- 90% of software is trash
+- "90% of software is trash"
   - Software som lages er for dårlig, og lever ikke lenge nok.
-- The physics of software is the physics of people
+- "The physics of software is the physics of people"
   - Software arkitektur bør likne mer på måten mennesker samarbeider.
-- Design by removing problems, not adding features
+- "Design by removing problems, not adding features"
   - Gjør alltid det enkleste som kan løse et gitt veldefinert problem
 
 Et av de bedre poengene dreide seg om hvordan en velger/designer protokoller delsystemer skal snakke sammen via.
 Han deler protokoller mellom det kan kaller *cheap* og *nasty*.
+
+> Cheap for the chatty stuff, Nasty for the real work.
+
 Cheap vil si verbose, enkle protokoller det er lett å parse og enkode.
 Nasty er protokoller som er håndkodede for å være effektive og kjappe, men som ikke nødvendigvis hverken er lette å jobbe med, eller enkle å utvde.
 Poenget hans er at det er behov for begge typer protokoller, men at kompromiss mellom de to skjeldent blir en god løsning.
 Cheap bør brukes til vanlige enkle oppgaver, og nasty protokoller bør lages til de oppgavene der ytelsen virkelig trengs.
-
-> Cheap for the chatty stuff, Nasty for the real work.
 
 *Greit nok, men jeg ville nok ikke brukt tid på å se dette på video.*
 
@@ -98,7 +99,7 @@ Foredraget var, som abstracten lovet, en *virvelvind* av relasjonell programmeri
   - Opprinnelig beskrevet i *The Reasoned Schemer* (MIT Press, 2005)
   - Designet for å være enkelt å modifisere og utvide
   - Kjernen består av kun 3 "former" (run, fresh, conde)
-  - Portet til en rekke andre språk, inkludert det nylige `core.logic` i Clojure
+  - Portet til en rekke andre språk
 
 Hele foredraget var en enkeste lang live-code session der Friedman og Byrd presenterte en rekke eksempler på ting det er mulig å gjøre i miniKanren.
 
@@ -121,6 +122,55 @@ Til sist fikk vi også et eksempel på generering av et *twine* par. Altså to p
 
 
 ## ClojureScript: Better Semantics at Low, Low Prices! (David Nolen)
+
+- Igjen: Fordel å transpilere til JS fordi JS kjører over alt og kan brukes på nett
+  - "Arms race" mellom Google, Mozilla og Apple har gjort JS veldig kjapt
+- ClojureScript er utrykks-orientert (dvs, alt i språket er uttrykk, ikke en mix av uttrykk og statements slik som i JS)
+- Fordeler med ClojureScript:
+  - Persistente datastrukturer
+  - Funksjoner som verdier
+  - Protokoller
+  - Namespaces
+  - REPL koblet opp mot browseren
+  - Macroer
+- Han prater om bakgrunn og implementsjonsdetaljer for ClojureScript
+  - Forklarer hvordan de har tenkt og gått frem for å transpirere en del av Clojures semantikk til (god) JS-kode
+  - Mange av forskjellene mellom JS og Clojure -- fleksibilitet en har i Clojure men ikke i JS (og motsatt?) -- kan føre til ineffektiv JS.
+    - Men de har åpenbart gjort mye smart for å motvirke dét.
+  - Jeg ville nok fått mer ut av denne delen av foredraget hvis jeg kunne mer Clojure...
+
+Demo av `core.logic`! (Implementasjon av miniKanren i Clojure. Ref. forrige foredrag.)
+
+*God presentasjon. Verdt å se for alle med interesse for Clojure og web.*
+
+
 ## Types vs Tests : An Epic Battle? (Amanda Laucher, Paul Snively)
+
+Presentert innledningsvis som en debatt mellom en "type-hatende test-elsker" og en "test-hatende type-elsker".
+Viste seg snart å heller være en slags oppsummering av en diskusjon og serie med kode-kataer de to har hatt gående over en periode.
+
+De brukte litt tid innledningsvis på å presentere "ytterpunktene" i debatten, presenterte oppgavene de hadde løst seg igjennom og hvilken tilnærming hver hadde hatt, og oppsummerte underveis og til slutt hovedpunktene de mer eller mindre kunne enes om:
+
+- I små kodebaser gir typesystemet mindre verdi
+- Typer skalerer bedre enn tester ettersom kodebasen vokser
+- Typer har liten verdi når en prater med ikke-tekniske bruker
+- Det vanskeligste er uansett å forstå kravene
+- En får skjeldent klart definerte input/output-eksempler som del av kravene (som kan gjøre det vanskeligere å skrive tester?)
+- Tester kan være bra for å forme idéer, og kan deretter ofte slettes
+- Typer kan spare en for å måtte tenke på noen former for tester
+- De fleste moderne språk har ikke sterke nok typesystemer til å gjøre ulovlige tilstander ikke-representerbare
+- Tester kan verifisere det typer ikke kan bevise
+- Test-kode er også kode, med egen kostnad til vedlikehold og krav til korrekthet
+- *Tester* kan sjekke eksempler på "there exists", *typer* kan garantere "for all".
+
+Dette burde vært en lyntale.
+Det var en hel del gode poenger, men de brukte for mye tid på å prate om hvordan de hadde forberedt foredraget i forhold til hva de var kommet frem til.
+
+*Litt for treg til at jeg vil anbefale den til andre enn de som er veldig opphengt i typer-vs-tester debatten.*
+
+
 ## The Database as a Value (Rich Hickey)
+![Første slide](https://raw.github.com/kvalle/strangeloop2012/master/bilder/hickey-the-database-as-a-value.jpg)
+
 ## Pushing the Limits of Web Browsers (Lars Bak)
+
