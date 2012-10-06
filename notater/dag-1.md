@@ -112,7 +112,7 @@ Ved å fylle inn en eller flere av disse kunne de ikke bare rekne resten. ut `va
 
 De startet med enkle eksempler slik som å vise at `3 + 4 = X` har løsningen `X = 7` og at `3 + X = 7` tilsvarende kan løses som `X = 4`, og gikk videre til å demonstrere stadig mer komplekse uttrykk.
 
-> It's quine time!
+> It's [quine time](https://github.com/webyrd/quines)!
 
 En del av det de fikk til lå helt på grensen til magi, og det hele toppet seg med demonstrasjon av hvordan en kunne generere *quines*, altså programmer som evaluerer til seg selv.
 
