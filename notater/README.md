@@ -4,6 +4,7 @@ Her ligger notater fra de foredragene jeg var på. Selv om notatene tidvis kan v
 
 - [Dag 0, Emerging Languages Camp](https://github.com/kvalle/strangeloop2012/blob/master/notater/dag-0-elc.md)
 - [Dag 1, Første konferansedag](https://github.com/kvalle/strangeloop2012/blob/master/notater/dag-1.md)
+- [Dag 2, Siste konferansedag](https://github.com/kvalle/strangeloop2012/blob/master/notater/dag-2.md)
 
 Strange Loop var i det store og hele en veldig bra konferanse, med flinke folk og mange gode presentasjoner. 
 
