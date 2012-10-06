@@ -241,7 +241,28 @@ Konklusjon: *Tidvis interessant, men ikke noe jeg ville brukt tid på å se på 
 
 ## [Project Lambda in Java 8][smith-slides] (Daniel Smith)
 
+Interessant foredrag av en av språkdesignerne for Java hos Oracle.
+Handlet dels om hva som kommer i Java 8, og dels om hvordan de tenker og går frem for å få implementert det.
 
+Om fokus for utviklingen av Java som språk:
+- Adapting to change
+- Righting what's wrong
+- Maintaining compatability
+- Preserving the core
+
+*Project Lambda: Function values in Java* -- Hva er nytt?
+- Lambda expressions
+- Variable capture (med inferert (implisitt) `final`)
+- Function Types -- funksjonelle interface
+- Target typing (utvidet fra Java 7)
+  - Infererer type fra venstresiden av assignment
+- Metodereferanser: referer til metoder som om de var funksjoner
+  - Eks: Arrays::asList, File::new
+  - Target type provides argument types
+- Default metoder: Kode i interfaces som default implementasjon
+  - Fører i praksis til multiple inheritance!
+
+Konklusjon: *Spennende foredrag for alle som er interessert i hva som kommer i Java 8.*
 
 ## The State of JavaScript (Brendan Eich)
 
