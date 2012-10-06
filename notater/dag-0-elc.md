@@ -19,7 +19,7 @@ Jeremy (skaperen av CoffeeScript, Backbone.js ++) snakker om hva som kjennetegne
 - fordel med transpilering: alt er på samme stack; gjør et enklere å få lov av kunde å ta i bruk det nye språket siden det kompilerer "ned" til noe kjent
 - Ved å fokusere på å bygge på eksisterende språk kan språkdesignere fokusere på selve språket i stedet for å bygge en ny runtime
 
-*Inneholdt ingen veldig banebrytende idéer, men verdt å se for den som er interessert i tankene bak design av CoffeeScript og liknende språk*
+Konklusjon: *Inneholdt ingen veldig banebrytende idéer, men verdt å se for den som er interessert i tankene bak design av CoffeeScript og liknende språk*
 
 
 ## Bandicoot: code reuse for the relational model (Ostap Cherkashin, Julius Chrobak)
@@ -34,7 +34,7 @@ Jeremy (skaperen av CoffeeScript, Backbone.js ++) snakker om hva som kjennetegne
 - Prøv ut interaktivt test-miljø online: mingle.io
 - Ser for meg at jeg kommer til å leke litt med dette, men tror ikke det er modent for å bruke til noen seriøse applikasjoner enda
 
-*Artig presentasjon/språk for alle som er nyskjerrige på sett-basert programmering/datamanipulasjon.*
+Konklusjon: *Artig presentasjon/språk for alle som er nyskjerrige på sett-basert programmering/datamanipulasjon.*
 
 
 ## Elm: Making the Web Functional (Evan Czaplicki)
@@ -50,14 +50,14 @@ Jeremy (skaperen av CoffeeScript, Backbone.js ++) snakker om hva som kjennetegne
 
 Skal definitivt se nærmere på dette.
 
-*Vell verdt å se for alle som er interessert i programmering på web eller funksjonell programmering*
+Konklusjon: *Vell verdt å se for alle som er interessert i programmering på web eller funksjonell programmering*
 
 
 ## Plan: a new dialect of Lisp (David Kendal)
 
 Plan er en høyst uferdig dialekt av Lisp, og foredraget handlet hovedsaklig om foredragsholders planer om å lage en Lisp med "akkurat passe" abstraksjonsnivå.
 
-*Ikke verdt å se på video*
+Konklusjon: *Ikke bruk tid på å se denne på video.*
 
 
 ## Clever, Classless and Free? (Håkan Råberg)
@@ -66,7 +66,7 @@ Foredrag om Råbergs erfaringer som har tatt han fra objektorientert programmeri
 
 Ikke veldig fokusert, men med noen interessante tanker og poenger her og der. Hovedbudskapet var kanskje at det er viktig å utfordre seg selv, og ikke bli for komfortabel der en er.
 
-*Ville ikke brukt tid på å se denne på video*
+Konklusjon: *Ville ikke brukt tid på å se dette heller på video.*
 
 
 ## The Reemergence of Datalog (Michael Fogus)
@@ -98,7 +98,7 @@ spørringer: (`x` vil her returneres som john og mary)
 
 Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det finnes flere implementasjoner, slik som Datomic og Cascalog.
 
-*Grei innføring til konseptet. Verdt å se om en, som meg, ikke er kjent med Datalog eller noen av implementasjonene fra før.*
+Konklusjon: *Grei innføring til Datalog. Verdt å se hvis en, som meg, ikke er kjent med Datalog eller noen av implementasjonene fra før.*
 
 
 ## Roy (Brian McKenna)
@@ -112,7 +112,7 @@ Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det fi
 - Best beskrevet som et kryssprodukt av CoffeeScript og Ocaml eller Haskell
 - (Foredraget har dagens hittil største #ithipster-faktor)
 
-*Interessant, selv om språket ikke er fullstendig ferdig enda. Verdt å se på video.*
+Konklusjon: *Interessant, selv om språket ikke er fullstendig ferdig enda. Verdt å se på video.*
 
 
 ## Julia: A Fast Dynamic Language For Technical Computing (Michael Homer)
@@ -130,7 +130,7 @@ Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det fi
 - Mangler gode grafikk-biblioteker
   - Finnes visstnok integrasjoner med matplotlib, gnuplot, og andre
 
-*Interessant foredrag om en er interessert i slike språk. På video ville jeg nok skipppet rastk igjennom selve foredraget, og kun sett demo-biten for å få et inntrykk av språket.*
+Konklusjon: *Interessant foredrag om en er interessert i slike språk. På video ville jeg nok skipppet rastk igjennom selve foredraget, og kun sett demo-biten for å få et inntrykk av språket.*
 
 
 # Rust (David Herman)
@@ -150,7 +150,7 @@ Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det fi
 - Virker som Mozillas svar på Go
   - En del mer low-level og mer komplekst, men gir samtidig mer kontroll over minne, etc
 
-*Foredraget er definitivt verdt å se for den som er interessert i språket, men er tidvis forholdsvis teknisk.*
+Konklusjon: *Foredraget er definitivt verdt å se for den som er interessert i språket, men er tidvis forholdsvis teknisk.*
 
 
 
@@ -167,7 +167,7 @@ Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det fi
 - Syntaktisk lettere inspirert av Ruby
 - Dokumentasjon som førsteklasses element i språket, og lett tilgjengelig i REPL
 
-*Spennende foredrag. Verdt å sjekke ut for alle som kjenner litt Erlang fra før, eller som liker webutvikling og vil lage noe som skal kjøre distribuert og skalere bra.*
+Konklusjon: *Spennende foredrag. Verdt å sjekke ut for alle som kjenner litt Erlang fra før, eller som liker webutvikling og vil lage noe som skal kjøre distribuert og skalere bra.*
 
 
 ## Visi: Cultured & Distributed (David Pollak)
@@ -193,4 +193,4 @@ Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det fi
 - Språket består av funksjoner og relasjoner mellom "sources" og "sinks" (tenk celler som input og output i regneark)
 - Unntak og feil skal i størst mulig grad skjules fra brukeren (ingen ønsker å se stacktraces i regnearket sitt!)
 
-*Greit og lite teknisk foredrag på slutten av dagen, men ikke noe jeg ville brukt tid på å se på video.*
+Konklusjon: *Greit og lite teknisk foredrag på slutten av dagen, men ikke noe jeg ville brukt tid på å se på video.*

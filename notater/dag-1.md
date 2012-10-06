@@ -7,7 +7,7 @@ Lite overbevisende og med (tidvis usaklig) kritikk av NoSQL og "OldSQL".
 
 Ekstremt dårlig valg som keynote, og ikke en lovende start på konferansen.
 
-*Overhodet ikke verdt å se.*
+Konklusjon: *Overhodet ikke verdt å se.*
 
 
 ## Monad examples for normal people, in Python and Clojure (Dustin Getz)
@@ -32,7 +32,7 @@ Getz har også lagt ut [både slides og kode](http://www.dustingetz.com/2012/09/
 
 Forstår jeg monads fullt ut etter dette foredraget? Nei. Men jeg vet langt mer om hva konseptet handler om og hva de kan brukes til.
 
-*Verdt å se for alle som er interessert i en (bedre) forståelse av hvordan monads fungerer.*
+Konklusjon: *Verdt å se for alle som er interessert i en (bedre) forståelse av hvordan monads fungerer.*
 
 ## Software Architecture using ZeroMQ (Pieter Hintjens)
 
@@ -59,7 +59,7 @@ Nasty er protokoller som er håndkodede for å være effektive og kjappe, men so
 Poenget hans er at det er behov for begge typer protokoller, men at kompromiss mellom de to skjeldent blir en god løsning.
 Cheap bør brukes til vanlige enkle oppgaver, og nasty protokoller bør lages til de oppgavene der ytelsen virkelig trengs.
 
-*Greit nok, men jeg ville nok ikke brukt tid på å se dette på video.*
+Konklusjon: *Greit nok, men jeg ville nok ikke brukt tid på å se dette på video.*
 
 
 ## Deconstructing P vs NP (or why I hate sudoku) (Daniel Spiewak)
@@ -85,7 +85,7 @@ Dette foredraget var lunch-underholdningen min, og var morsomt men på ingen må
   - Eksponenter kan tross alt bli ganske store...
   - Dette betyr at selv om P=NP trenger det faktisk ikke ha noen stor praktisk betydning!
 
-*Artig foredrag, men lærte strengt tatt ikke noe nytt utover pensum fra AlgDat på NTNU*
+Konklusjon: *Artig foredrag, men lærte strengt tatt ikke noe nytt utover pensum fra AlgDat på NTNU*
 
 
 ## Relational Programming in miniKanren (Daniel Friedman, William Byrd)
@@ -118,7 +118,7 @@ En del av det de fikk til lå helt på grensen til magi, og det hele toppet seg 
 
 Til sist fikk vi også et eksempel på generering av et *twine* par. Altså to programmer `A` og `B` som evaluerer til hverandre. `eval(A) == B` og `eval(B) == A`.
 
-*Absolutt verdt å se. Veldig akademisk, og ekstremt underholdende.*
+Konklusjon: *Absolutt verdt å se. Veldig akademisk, og ekstremt underholdende.*
 
 
 ## ClojureScript: Better Semantics at Low, Low Prices! (David Nolen)
@@ -141,7 +141,7 @@ Til sist fikk vi også et eksempel på generering av et *twine* par. Altså to p
 
 Demo av `core.logic`! (Implementasjon av miniKanren i Clojure. Ref. forrige foredrag.)
 
-*God presentasjon. Verdt å se for alle med interesse for Clojure og web.*
+Konklusjon: *God presentasjon. Verdt å se for alle med interesse for Clojure og web.*
 
 
 ## Types vs Tests : An Epic Battle? (Amanda Laucher, Paul Snively)
@@ -166,7 +166,7 @@ De brukte litt tid innledningsvis på å presentere "ytterpunktene" i debatten, 
 Dette burde vært en lyntale.
 Det var en hel del gode poenger, men de brukte for mye tid på å prate om hvordan de hadde forberedt foredraget i forhold til hva de var kommet frem til.
 
-*Litt for treg til at jeg vil anbefale den til andre enn de som er veldig opphengt i typer-vs-tester debatten.*
+Konklusjon: *Litt for treg til at jeg vil anbefale den til andre enn de som er veldig opphengt i typer-vs-tester debatten.*
 
 
 ## The Database as a Value (Rich Hickey)
@@ -228,7 +228,7 @@ Datomic: En immutable database som er sentrert rundt et begrep om tid.
      - Krever ikke koordinering
      - Kan gjøres distribuert (på klientene)!
 
-*Absolutt et foredrag det er verdt å få med seg.*
+Konklusjon: *Absolutt et foredrag det er verdt å få med seg.*
 
 
 ## Pushing the Limits of Web Browsers (Lars Bak)
@@ -266,3 +266,4 @@ Ting Lars har lært gjennom karrieren:
   - Er ikke tvunget til å vente på release av ny versjon for å få fikset bugs
 - "When building for performance, be sure to track performance from day one"
 
+Konklusjon: *Bra foredrag. Verdt å se for alle som er interessert i ytelse og/eller JS/Dart.*
