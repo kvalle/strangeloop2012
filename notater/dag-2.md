@@ -66,6 +66,48 @@ Konklusjon: *Definitivt verdt å se.*
 
 
 ## Y Not? - Adventures in Functional Programming (Jim Weirich)
+
+Weirich holder et morsomt og underholdene foredrag om et smalt, og som han selv sier "fullstendig unyttig" tema: Y-kombinatoren. (Her gikk ting litt unna, og notatene mine er nok ikke veldig meningsfulle uten å ha sett foredraget, dessverre.)
+
+Innledende spørsmål: Hva er "effectively computable"?
+
+- Alt som kan regnes ut på en turingmaskin, *eller vha λ-kalkulus*!
+
+Lambda kalkulus i et nøtteskall: λx.x
+
+> "Essentially, λ-calculus is one big macro expansion."
+
+Fixpoints:
+- Et fixpoint er et punkt en funksjon konvergerer mot.
+- Eksempel: Ta `cos(x) = y` for et hvilket som helst `x`. Regn så `cos(y)` og gjenta mange ganger. Verdien vil konvergere mot 0.739085133. (Dette er punktet der grafen av cosinus-funksjonen møter linjen y = x.)
+- Et fixpoint er altså en verdi som, hvis gitt til en funksjon, vil returnere den samme verdien.
+
+Live demo! 
+
+> "This is where it gets kind of scary..."
+
+Weirich starter med en kjapp forklaring av høyere ordens funksjoner, og beskriver så en rekke forskjellige funksjonelle refaktoreringer:
+- Tennent correspondence principle: Omslutt koden med en lambda, og kall den umiddelbart.
+- Introduce binding: Introduser nye variabler (så lenge de ikke er referert i koden de introduseres til).
+- Wrap function: Kall en eksisterende funksjon ved å kalle den fra en ny ytre funksjon.
+- Inline defininition: Erstatt funksjonskall med den fulle definisjonen av funksjonen (funksjonkroppen).
+
+Ved hjelp av disse viser han hvordan kode kan reduseres til sammensetninger/komposisjoner av lambda-uttrykk.
+
+Ved hjelp av et factorial-eksempel viser han hvordan også kode med rekursive kall kan reduseres til lambdaer.
+Dette gjøres ved å dele koden opp i en "factorial" bit og en "rekursiv" bit.
+- "Factorial"-biten er en funksjon som definerer factorial for ett steg. (Kan brukes til å regne ut factorial av 1, men ingenting mer.)
+- Den rekursive biten tar inn en slik funksjon, og forbedrer den ved å returnere en funksjon som klarer å løse ytterligere et steg. Dette kalles en *improver-funksjon*.
+
+Vi trenger å finne fixpoint for improver-funksjonen.
+- Factorial er fixpoint for factorial-improveren i eksempelet.
+
+Denne typen fixpoint-combinator kalles *applicative order y-combinator*.
+
+Anbefalt videre lesing: [Programming With Nothing](http://experthuman.com/programming-with-nothing).
+
+Konklusjon: *Et foredrag som er veldig verdt å se for spesielt interesserte :)*
+
 ## Runaway complexity in Big Data... and a plan to stop it (Nathan Marz)
 ## Humanity 2.0 (Matthew Taylor)
 ## Guess lazily! Making a program guess and guess well (Oleg Kiselyov)
