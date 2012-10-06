@@ -100,7 +100,7 @@ Dette gjøres ved å dele koden opp i en "factorial" bit og en "rekursiv" bit.
 - Den rekursive biten tar inn en slik funksjon, og forbedrer den ved å returnere en funksjon som klarer å løse ytterligere et steg. Dette kalles en *improver-funksjon*.
 
 Vi trenger å finne fixpoint for improver-funksjonen.
-- Factorial er fixpoint for factorial-improveren i eksempelet.
+- Den endelige factorial-funksjonen er fixpoint for factorial-improveren i eksempelet.
 
 Denne typen fixpoint-combinator kalles *applicative order y-combinator*.
 
@@ -108,10 +108,97 @@ Anbefalt videre lesing: [Programming With Nothing](http://experthuman.com/progra
 
 Konklusjon: *Et foredrag som er veldig verdt å se for spesielt interesserte :)*
 
-## Runaway complexity in Big Data... and a plan to stop it (Nathan Marz)
+
+## [Runaway complexity in Big Data... and a plan to stop it](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Marz-RunawayComplexityBigData.pdf?raw=true) (Nathan Marz)
+
+Marz diskuterer på en overbevisende måte først vanlige kilder til kompleksitet i dagens datasystemer, og deretter sine idéer for hvordan fundamentalt bedre datasystemer kan designes.
+
+Kilder til kompleksitet:
+- Mangel på toleranse for menneskelige feil
+- Sammenblanding av data og spørringer på data
+- Schema gjort på feil måte
+
+Et av de store problemene er at systemene ikke er laget for å være tolerante overfor at mennesker gjør feil.
+
+Det værste som kan skje er at en mister eller gjør data korrupt (eller kan problemet enkelt fikses!)  
+- Muterbare systemer har en iboende mangel på toleranse overfor slike problemer nettopp fordi det er mulig å gjøre dette. 
+- Konklusjon: Lag ikke-muterbare systemer! Lagring bør gjøres ved å legge til nye data/revisjoner, ikke ved å slette/endre gamle.
+
+Normalisering vs ikke-normalisering: 
+- Joins koster for mye! 
+- Men redundans er også dumt...
+
+> "Queries are fundamentally complected"
+
+Schemaer:
+- Et schema er i praksis en funksjon over data, som forteller hvorvidt dataene er gyldige eller ikke.
+- Schema gir strukturell integritet.
+  - Uten schema vil vi først oppdage at dataene er blitt korrupte lenge etter at det har skjedd.
+- Problemene en i dag forbinder med schemaer er knyttet til implementasjoner og ikke den underliggende idéen/verdien.
+
+Kort oppsummert, problemer med dagens RDBMSer:
+- Komplekterer lagring av data og spørring over dataene.
+- Muterbar tilstand!
+
+En query er i praksis en funksjon over all data som ligger i databasen.
+Å gjøre spørring over all data samtidig blir imidlertid for krevende, et problem vi løser ved å lage forhåndsgenererte views spørringene kan jobbe på.
+
+```
+      funksjon           funksjon
+         ↓                  ↓    
+All data → precomputed view → query
+```
+          
+Problemet med å generere viewene er perfekt for map-reduce.
+
+En ideell database bør
+- Bare kreve batch writes (ikke random writes)
+- Kan være normalisert (men det trenger ikke batch-viewet være!)
+
+Men batch-views er for trege!
+- Innen de er ferdig laget vil de allerede være utdaterte.
+- Men de er *eventually consistent* (uten at det gjør dem mer komplekse)
+
+De dataene som ikker er up-to-date i batch-view kan ligge i et *realtime view*.
+- Lytter til datastrømmen
+- Spørringer gjøres mot unionen av batch view og realtime view
+
+Alt dette bygger opp mot arkitekturen Marz jobber med for Twitter, som de har kalt "Lambda Architecture":
+
+![Lambda-arkitekturen](https://raw.github.com/kvalle/strangeloop2012/master/bilder/marz-lambda-architecture.jpg)
+
+For å oppsummere, fordeler med denne arkitekturen er:
+- Alle data er lagret → feil kan rettes ved å rekalkulere views
+- Separasjon av spørring og lagring (slik at hver kan optimaliseres for seg)
+- Uten muterbar tilstand trenger vi ikke bekymre oss for miste/korruptere gamle data
+- Kan lagre data normalisert, og ha effektive spørringer mot denormaliserte views
+
+Konklusjon: *Mange spennende tanker rundt data og fremtidens datasystemer. Anbefales å se!*
+
+
 ## Humanity 2.0 (Matthew Taylor)
+
+Underholdende/inspirerende ikke-teknisk foredrag.
+Umulig å lage notater fra, se heller fordraget på video når det kommer ut.
+
+Konklusjon: *TED-tilstander på Strange Loop :)*
+
 ## Guess lazily! Making a program guess and guess well (Oleg Kiselyov)
 ## Wolfram's data analysis platform (Taliesin Beynon)
 ## Expressing abstraction - Abstracting expression (Ola Bini)
 ## Project Lambda in Java 8 (Daniel Smith)
+
 ## The State of JavaScript (Brendan Eich)
+
+Underholdende foredrag om JavaScript som blant annet omfattet følgende:
+
+- Litt om de historiske røttene. 
+- En del om hva som er bra (og ikke så bra) med JS i dag.
+  - Inkludert utdrag av [WAT](https://www.destroyallsoftware.com/talks/wat)
+- Trend: Språk som kompilerer til JS ← JS med et nytt liv som felles platform i større grad enn å bare være et språk.
+- Kompilering av eksisterende (ikke-web) språk til JS.
+  - [Emscripten](https://github.com/kripken/emscripten): LLVM-til-JS kompilator
+- Spill på web, med JS og WebGL
+  - Livespilling av Quake ++
+
+Konklusjon: *Bør sees av alle med selv den minste interesse for JS.*
