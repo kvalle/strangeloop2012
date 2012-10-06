@@ -185,14 +185,63 @@ Konklusjon: *TED-tilstander på Strange Loop :)*
 
 ## Guess lazily! Making a program guess and guess well (Oleg Kiselyov)
 
+Temaet for foredraget var hvordan en kan formulere tanken "gjett verdien av denne variablen" i kode, og tilsvarende "gjett igjen" hvis det første gjettet ikke skulle vise seg å stemme. 
+Og dessuten, hvordan får vi datamaskinen til å gjette på en lur måte, ved å bygge inn kunnskap i prosessen?
+
+Det føltes som om det var en hel del brilliante idéer her, men jeg falt dessverre av et godt stykke før jeg skjønte hva de gikk ut på.
+
+Dette er nok et ofredrag jeg vil prøve meg på om igjen om en god stund, når jeg har lest meg opp litt på forhånd.
+
+[Lenke til abstract](https://thestrangeloop.com/sessions/guess-lazily-making-a-program-guess-and-guess-well) for den som vil vite mer om hva foredraget gikk ut på.
+
+Konklusjon: *Se denne hvis du er interessert i probabilistisk/ikke-deterministisk programmering, ikke er redd for å lese en hel del OCaml-kode, og føler deg relativt smart en kveld.*
+
 
 ## Wolfram's data analysis platform (Taliesin Beynon)
 
+Foredrag om Mathematica og demonstrasjoner av [Wolfram|Alpha Pro](http://www.wolframalpha.com/pro/).
 
-## [Expressing abstraction - Abstracting expression](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Bini-ExpressingAbstractionAbstractingExpression.pdf?raw=true) (Ola Bini)
+Mathematica:
+- Editor, språk, programming environment
+- Symbolic functional language (pattern based)
+- Dynamisk interaktivt environment
+- Mange innebygde algoritmer
+- Grafikkbibliotek
+- Virker som et svært kraftig verktøy for forskere som trenger å resonere rundt data/algoritmer
+
+Bruker Mathematica som presentasjonsverktøy
+- Innhold som en "arbeidsbok" i Mathematica
+- Tekst, kode, REPL -- side ved side
+
+Formål med Wolfram|Alpha: "Make all human knowledge computable"
+
+Demo W|A Pro: Personlige data fra Facebook
+- Presenteres med (nesten skremmende) mye data som kan hentes ut fra FB-profiler
+- Stats, timeline-data, nettverksdata over venner, etc
+
+Demo W|A Pro: Laste opp egne datasett
+- Kan laste opp egne datasett (foreløpig kun i form av CSV-filer)
+- WA cruncher og manipulerer (vasker) dataene slik at de blir enklere å trekke ut informasjon fra
+- Trekker deretter ut og viser så mye informasjon som mulig
+  - Stats, diagrammer, etc
+  - Ganske imponerende til å være automatiske fremstillinger av dataene
+
+Konklusjon: *Helt greit foredrag, men antagelig ikke verdt å bruke på på video.*
+
+## [Expressing abstraction - Abstracting expression][bini-slides] (Ola Bini)
+
+Bini tar for seg forholdet mellom uttrykkbarhet og abstraksjon, og stiller spørsmålet "Why are new languages still being created? Is it worth choosing languages strategically/Does language actually matter?".
+
+Forholdsvis abstrakt (no pun intended) og lite teknisk, med mange quotes og orddefinisjoner. 
+Uten noen endelige konklusjoner eller løsninger, men med en del iteressante tanker underveis.
+
+Ble litt langtekkelig etter en stund. Kunne kanskje fungert langt bedre som en lyntale?
+
+Konklusjon: *Tidvis interessant, men ikke noe jeg ville brukt tid på å se på video.*
+
+## [Project Lambda in Java 8][smith-slides] (Daniel Smith)
 
 
-## [Project Lambda in Java 8](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Smith-ProjectLambda%28notes%29.pdf?raw=true) (Daniel Smith)
 
 ## The State of JavaScript (Brendan Eich)
 
@@ -206,6 +255,10 @@ Underholdende foredrag om JavaScript som blant annet omfattet følgende:
   - [Emscripten](https://github.com/kripken/emscripten): LLVM-til-JS kompilator
 - Spill på web, med JS og WebGL
   - Livespilling av Quake ++
+- Mye om hva som kommer i ECMAScript 6!
+
+Konklusjon: *Bør sees av alle med selv den minste interesse for JS.*
+
 
 [hawkins-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Hawkins-ComputingLikeTheBrain.pdf?raw=true
 [weirich-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Weirich-YNot.pdf?raw=true
