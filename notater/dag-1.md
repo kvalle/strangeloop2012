@@ -1,6 +1,6 @@
 # Dag 1 - Første konferansedag
 
-## Keynote: In-memory Databases - the Future is now! (Michael Stonebraker)
+## [In-memory Databases - the Future is now!][stonebreaker-slides] (Michael Stonebraker)
     
 Mer eller mindre en salgspresentasjon for en NewSQL-løsning, VoldDB, som Stonebreaker jobber på.
 Lite overbevisende og med (tidvis usaklig) kritikk av NoSQL og "OldSQL".
@@ -10,7 +10,7 @@ Ekstremt dårlig valg som keynote, og ikke en lovende start på konferansen.
 Konklusjon: *Overhodet ikke verdt å se.*
 
 
-## Monad examples for normal people, in Python and Clojure (Dustin Getz)
+## [Monad examples for normal people, in Python and Clojure][getz-slides] (Dustin Getz)
 
 Foredraget åpnes innledningsvis med "*Hopefully you guys'll understand this...*"
 
@@ -34,7 +34,7 @@ Forstår jeg monads fullt ut etter dette foredraget? Nei. Men jeg vet langt mer 
 
 Konklusjon: *Verdt å se for alle som er interessert i en (bedre) forståelse av hvordan monads fungerer.*
 
-## Software Architecture using ZeroMQ (Pieter Hintjens)
+## [Software Architecture using ZeroMQ][hintjens-slides] (Pieter Hintjens)
 
 Veldig høytsvevende foredrag om software-arkitektur generelt.
 Strengt tatt lite som er direkte knyttet il ØMQ, men når stendene det nevnes får jeg lite ut av eksemplene da foredraget tydeligvis forutsetter at en allerede er kjent med ØMQ fra før av.
@@ -144,7 +144,7 @@ Demo av `core.logic`! (Implementasjon av miniKanren i Clojure. Ref. forrige fore
 Konklusjon: *God presentasjon. Verdt å se for alle med interesse for Clojure og web.*
 
 
-## Types vs Tests : An Epic Battle? (Amanda Laucher, Paul Snively)
+## [Types vs Tests : An Epic Battle?][laucher-snively-slides] (Amanda Laucher, Paul Snively)
 
 Presentert innledningsvis som en debatt mellom en "type-hatende test-elsker" og en "test-hatende type-elsker".
 Viste seg snart å heller være en slags oppsummering av en diskusjon og serie med kode-kataer de to har hatt gående over en periode.
@@ -267,3 +267,9 @@ Ting Lars har lært gjennom karrieren:
 - "When building for performance, be sure to track performance from day one"
 
 Konklusjon: *Bra foredrag. Verdt å se for alle som er interessert i ytelse og/eller JS/Dart.*
+
+
+[stonebreaker-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Stonebraker-InMemoryDatabases.pdf?raw=true
+[getz-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Getz-MonadsInPython.pdf?raw=true
+[hintjens-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Hintjens-SoftwareArchitectureOverZeroMQ.pdf?raw=true
+[laucher-snively-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/LaucherSnively-TypesVsTests.pdf?raw=true

@@ -5,7 +5,7 @@ ELC-dagen besto av en rekke foredrag om forskjellige språk. Noen relativt modne
 [Emerging Languages Camp](http://emerginglangs.com/) er egentlig en frittstående event som ble arrangert i samarbeid med Strange Loop for første gang. ELC har tidligere to ganger vært arrangert på OSCON.
 
 
-## Symbiotic Languages: Transpiling into JavaScript (Jeremy Ashkenas)
+## [Symbiotic Languages: Transpiling into JavaScript][ashkenas-slides] (Jeremy Ashkenas)
 
 Jeremy (skaperen av CoffeeScript, Backbone.js ++) snakker om hva som kjennetegner mange av de nye språkene som dukker opp om dagen -- at de kompilerer til andre høynivåspråk som allerede er etablerte (som oftest JS).
 
@@ -22,7 +22,7 @@ Jeremy (skaperen av CoffeeScript, Backbone.js ++) snakker om hva som kjennetegne
 Konklusjon: *Inneholdt ingen veldig banebrytende idéer, men verdt å se for den som er interessert i tankene bak design av CoffeeScript og liknende språk*
 
 
-## Bandicoot: code reuse for the relational model (Ostap Cherkashin, Julius Chrobak)
+## [Bandicoot: code reuse for the relational model][cherkashin-chrobak-slides] (Ostap Cherkashin, Julius Chrobak)
 
 - Bandicoot: språk og runtime for å forbedre grensesnittet mot den relasjonelle modellen
 - Use case: Spørringer mot datasett (eksempel: csv-filer)
@@ -37,7 +37,7 @@ Konklusjon: *Inneholdt ingen veldig banebrytende idéer, men verdt å se for den
 Konklusjon: *Artig presentasjon/språk for alle som er nyskjerrige på sett-basert programmering/datamanipulasjon.*
 
 
-## Elm: Making the Web Functional (Evan Czaplicki)
+## [Elm: Making the Web Functional][czaplicki-slides] (Evan Czaplicki)
 
 - Funksjonelt og typesikkert språk som kompierer til HTML, CSS og JS
 - Målsetning: Gjøre programmering (inkludert GUI) enklere
@@ -60,7 +60,7 @@ Plan er en høyst uferdig dialekt av Lisp, og foredraget handlet hovedsaklig om 
 Konklusjon: *Ikke bruk tid på å se denne på video.*
 
 
-## Clever, Classless and Free? (Håkan Råberg)
+## [Clever, Classless and Free?][raberg-slides] (Håkan Råberg)
 
 Foredrag om Råbergs erfaringer som har tatt han fra objektorientert programmering i Java, via nye språk som ruby Ruby (og en implementasjon av Rubys Enumerable for Java), og til sist til funksjonell programmering og shen (http://shenlanguage.org/)
 
@@ -69,7 +69,7 @@ Ikke veldig fokusert, men med noen interessante tanker og poenger her og der. Ho
 Konklusjon: *Ville ikke brukt tid på å se dette heller på video.*
 
 
-## The Reemergence of Datalog (Michael Fogus)
+## [The Reemergence of Datalog][fogus-slides] (Michael Fogus)
 
 - Datalog er et programmeringspråk for å definere deklarative regler og spørringer på data
 - Gammel idé, stammer fra 1970-tallet.
@@ -115,7 +115,7 @@ Konklusjon: *Grei innføring til Datalog. Verdt å se hvis en, som meg, ikke er 
 Konklusjon: *Interessant, selv om språket ikke er fullstendig ferdig enda. Verdt å se på video.*
 
 
-## Julia: A Fast Dynamic Language For Technical Computing (Michael Homer)
+## [Julia: A Fast Dynamic Language For Technical Computing][bezanson-karpinski-slides] (Stefan Karpinski)
 
 - Problem: Det finnes mange tekniske språk, men ingen general purpose. Løsning: Julia?
   - Med tekniske språk menes språk som Matlab, SciPy, etc.
@@ -133,7 +133,7 @@ Konklusjon: *Interessant, selv om språket ikke er fullstendig ferdig enda. Verd
 Konklusjon: *Interessant foredrag om en er interessert i slike språk. På video ville jeg nok skipppet rastk igjennom selve foredraget, og kun sett demo-biten for å få et inntrykk av språket.*
 
 
-# Rust (David Herman)
+# [Rust][herman-slides] (David Herman)
 
 - Nytt programmeringspråk laget av Mozilla Research
 - Skapt for å møte behovet for et godt språk for å implementere browsere
@@ -170,7 +170,7 @@ Konklusjon: *Foredraget er definitivt verdt å se for den som er interessert i s
 Konklusjon: *Spennende foredrag. Verdt å sjekke ut for alle som kjenner litt Erlang fra før, eller som liker webutvikling og vil lage noe som skal kjøre distribuert og skalere bra.*
 
 
-## Visi: Cultured & Distributed (David Pollak)
+## [Visi: Cultured & Distributed][pollak-slides] (David Pollak)
 
 - David Pollak
   - Lang fartstid innen utvikling av spreadsheets: Mesa, Integer BASIC
@@ -194,3 +194,13 @@ Konklusjon: *Spennende foredrag. Verdt å sjekke ut for alle som kjenner litt Er
 - Unntak og feil skal i størst mulig grad skjules fra brukeren (ingen ønsker å se stacktraces i regnearket sitt!)
 
 Konklusjon: *Greit og lite teknisk foredrag på slutten av dagen, men ikke noe jeg ville brukt tid på å se på video.*
+
+
+[ashkenas-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Ashkenas-TranspilingIntoJavaScript.pdf?raw=true
+[bezanson-karpinski-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/BezansonKarpinski-Julia.pdf?raw=true
+[cherkashin-chrobak-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/CherkashinChrobak-Bandicoot.pdf?raw=true
+[czaplicki-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Czaplicki-ElmMakingTheWebFunctional.pdf?raw=true
+[fogus-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Fogus-Datalog.pdf?raw=true
+[herman-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Herman-Rust.pdf?raw=true
+[pollak-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Pollak-Visi.pdf?raw=true
+[raberg-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Raberg-CleverClasslessAndFree.pdf?raw=true

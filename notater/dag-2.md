@@ -1,6 +1,6 @@
 # Dag 2 - Siste konferansedag
 
-## Computing Like the Brain (Jeff Hawkins)
+## [Computing Like the Brain][hawkins-slides] (Jeff Hawkins)
 
 Dette var på forhånd kanskje den keynoten jeg var mest spent på. 
 Etter å ha lest [On Intelligence](http://www.amazon.com/On-Intelligence-ebook/dp/B003J4VE5Y/) for godt over et år siden og blitt imponert over Hawkins overaskende konkrete modell over hvordan hjernen fungerer, var jeg spent på å se hva [Numenta](https://www.numenta.com/) hadde klart å få til de siste årene. 
@@ -65,7 +65,7 @@ På spørsmål om Grok er, eller skal gjøres, open source svarer Hawkins at de 
 Konklusjon: *Definitivt verdt å se.*
 
 
-## Y Not? - Adventures in Functional Programming (Jim Weirich)
+## [Y Not? - Adventures in Functional Programming][weirich-slides] (Jim Weirich)
 
 Weirich holder et morsomt og underholdene foredrag om et smalt, og som han selv sier "fullstendig unyttig" tema: Y-kombinatoren. (Her gikk ting litt unna, og notatene mine er nok ikke veldig meningsfulle uten å ha sett foredraget, dessverre.)
 
@@ -109,7 +109,7 @@ Anbefalt videre lesing: [Programming With Nothing](http://experthuman.com/progra
 Konklusjon: *Et foredrag som er veldig verdt å se for spesielt interesserte :)*
 
 
-## [Runaway complexity in Big Data... and a plan to stop it](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Marz-RunawayComplexityBigData.pdf?raw=true) (Nathan Marz)
+## [Runaway complexity in Big Data... and a plan to stop it][marz-slides] (Nathan Marz)
 
 Marz diskuterer på en overbevisende måte først vanlige kilder til kompleksitet i dagens datasystemer, og deretter sine idéer for hvordan fundamentalt bedre datasystemer kan designes.
 
@@ -184,9 +184,15 @@ Umulig å lage notater fra, se heller fordraget på video når det kommer ut.
 Konklusjon: *TED-tilstander på Strange Loop :)*
 
 ## Guess lazily! Making a program guess and guess well (Oleg Kiselyov)
+
+
 ## Wolfram's data analysis platform (Taliesin Beynon)
-## Expressing abstraction - Abstracting expression (Ola Bini)
-## Project Lambda in Java 8 (Daniel Smith)
+
+
+## [Expressing abstraction - Abstracting expression](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Bini-ExpressingAbstractionAbstractingExpression.pdf?raw=true) (Ola Bini)
+
+
+## [Project Lambda in Java 8](https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Smith-ProjectLambda%28notes%29.pdf?raw=true) (Daniel Smith)
 
 ## The State of JavaScript (Brendan Eich)
 
@@ -201,4 +207,8 @@ Underholdende foredrag om JavaScript som blant annet omfattet følgende:
 - Spill på web, med JS og WebGL
   - Livespilling av Quake ++
 
-Konklusjon: *Bør sees av alle med selv den minste interesse for JS.*
+[hawkins-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Hawkins-ComputingLikeTheBrain.pdf?raw=true
+[weirich-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Weirich-YNot.pdf?raw=true
+[marz-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Marz-RunawayComplexityBigData.pdf?raw=true
+[bini-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Bini-ExpressingAbstractionAbstractingExpression.pdf?raw=true
+[smith-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Smith-ProjectLambda%28notes%29.pdf?raw=true
