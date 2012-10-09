@@ -9,9 +9,13 @@ Presentasjonene spenner over temaer som programmeringspråk, alternaltive databa
 Med foredrag som [We Really Don't Know How To Compute!][sussman-compute] (Gerald J. Sussman) og [Simple Made Easy][hickey-simple] (Rich Hickey) blant fjorårets keynotes hadde vi naturligvis høye forventninger i forkant av konferansen.
 Dette er en erfaringsrapport og oppsummering fra BEKKs tre utsendte.
 
+![Hovedscenen på Peabody Opera House](https://raw.github.com/kvalle/strangeloop2012/master/bilder/peabody-opera.jpg)
 
 Overordnede temaer/trender
 --------------------------
+
+Enkelte temaer ble nevnt igjen og igjen i forskjellige foredrag.
+Dette er trendene vi føler krystaliserte seg mest tydelig på årets konferanse.
 
 ### Tema 1: Re-tenking av databasen (og relasjonell programmering)
 
@@ -33,7 +37,7 @@ Med foredrag om Light Table, Catnip, aneditor/anterminal, og Bret Victor's "Taki
 Jeg fikk dessverre ikke sett noen av disse.
 Var dere innom nok til å ha en mening, eller bør vi droppe det fra oversikten?
 
-*Annet jeg ikke har kommet på?*
+*Annet jeg har glemt å ta med?*
 
 Personlige høydepunkter
 -----------------------
@@ -48,11 +52,27 @@ Personlige høydepunkter
 
 ### Kjetil
 
+
+
+<!--
+På samme måte som et av foredragene fra i fjor nevnt innledningsvis, *We Really Don't Know How To Compute!* av G. Sussman, var det også i år et par foredrag av professorer ved MIT.
+
 Tentativt:
 
 - The Database as a Value (Rich Hickey)
 - Relational Programming in miniKanren (Daniel Friedman, William Byrd)
 - Computing Like the Brain (Jeff Hawkins)
+-->
+
+PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg også delt [notatene jeg skrev iløpet av konferansen][notater-kjetil] på GitHub.
+
+
+Oppsummering
+------------
+
+*TODO*
+
 
 [sussman-compute]: http://www.infoq.com/presentations/We-Really-Dont-Know-How-To-Compute
 [hickey-simple]: http://www.infoq.com/presentations/Simple-Made-Easy
+[notater-kjetil]: https://github.com/kvalle/strangeloop2012/tree/master/notater
