@@ -52,17 +52,16 @@ Personlige høydepunkter
 
 ### Kjetil
 
+Dagen før konferansen startet for fullt, på *preconference day*, kunne en velge mellom å delta på en rekke forskjellige workshops, eller den såkalte [Emerging Languages Bootcamp](http://emerginglangs.com/).
+Jeg valgte sistnevnte, og tilbrakte en lang dag med svært mange spennende foredrag om alt fra Mozillas nye språk [Rust](http://www.rust-lang.org/) til flere funksjonelle språk som kompilerer til JavaScript.
+Selv om ingen av foredragene individuelt sett er å finne blant mine topp 3 høydepunkter fra konferansen, var det en svært bra dag.
 
+*TODO: Skrive noe om 3 av disse:*
 
-<!--
-På samme måte som et av foredragene fra i fjor nevnt innledningsvis, *We Really Don't Know How To Compute!* av G. Sussman, var det også i år et par foredrag av professorer ved MIT.
-
-Tentativt:
-
-- The Database as a Value (Rich Hickey)
-- Relational Programming in miniKanren (Daniel Friedman, William Byrd)
-- Computing Like the Brain (Jeff Hawkins)
--->
+1. Relational Programming in miniKanren (Daniel Friedman, William Byrd)  
+1. Monad examples for normal people, in Python and Clojure (Dustin Getz)  
+1. The Database as a Value (Rich Hickey)  
+1. Computing Like the Brain (Jeff Hawkins)
 
 PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg også delt [notatene jeg skrev iløpet av konferansen][notater-kjetil] på GitHub.
 
