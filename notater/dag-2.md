@@ -264,7 +264,7 @@ Om fokus for utviklingen av Java som språk:
 
 Konklusjon: *Spennende foredrag for alle som er interessert i hva som kommer i Java 8.*
 
-## The State of JavaScript (Brendan Eich)
+## [The State of JavaScript][eich-slides] (Brendan Eich)
 
 Underholdende foredrag om JavaScript som blant annet omfattet følgende:
 
@@ -286,3 +286,4 @@ Konklusjon: *Bør sees av alle med selv den minste interesse for JS.*
 [marz-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Marz-RunawayComplexityBigData.pdf?raw=true
 [bini-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Bini-ExpressingAbstractionAbstractingExpression.pdf?raw=true
 [smith-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Smith-ProjectLambda%28notes%29.pdf?raw=true
+[eich-slides]: http://brendaneich.github.com/Strange-Loop-2012/#/21
