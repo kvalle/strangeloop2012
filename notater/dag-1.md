@@ -231,7 +231,7 @@ Datomic: En immutable database som er sentrert rundt et begrep om tid.
 Konklusjon: *Absolutt et foredrag det er verdt å få med seg.*
 
 
-## Pushing the Limits of Web Browsers (Lars Bak)
+## [Pushing the Limits of Web Browsers][bak-slides] (Lars Bak)
 
 Lars Bak ble i 2006 ansatt i Google for å øke ytelsen på JavaScript. 
 
@@ -273,3 +273,4 @@ Konklusjon: *Bra foredrag. Verdt å se for alle som er interessert i ytelse og/e
 [getz-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Getz-MonadsInPython.pdf?raw=true
 [hintjens-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Hintjens-SoftwareArchitectureOverZeroMQ.pdf?raw=true
 [laucher-snively-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/LaucherSnively-TypesVsTests.pdf?raw=true
+[bak-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Bak-PushingTheLimitsOfWebBrowser.pdf?raw=true

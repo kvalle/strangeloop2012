@@ -176,14 +176,14 @@ For å oppsummere, fordeler med denne arkitekturen er:
 Konklusjon: *Mange spennende tanker rundt data og fremtidens datasystemer. Anbefales å se!*
 
 
-## Humanity 2.0 (Matthew Taylor)
+## [Humanity 2.0][taylor-slides] (Matthew Taylor)
 
 Underholdende/inspirerende ikke-teknisk foredrag.
 Umulig å lage notater fra, se heller fordraget på video når det kommer ut.
 
 Konklusjon: *TED-tilstander på Strange Loop :)*
 
-## Guess lazily! Making a program guess and guess well (Oleg Kiselyov)
+## [Guess lazily! Making a program guess and guess well][kiselyov-slides] (Oleg Kiselyov)
 
 Temaet for foredraget var hvordan en kan formulere tanken "gjett verdien av denne variablen" i kode, og tilsvarende "gjett igjen" hvis det første gjettet ikke skulle vise seg å stemme. 
 Og dessuten, hvordan får vi datamaskinen til å gjette på en lur måte, ved å bygge inn kunnskap i prosessen?
@@ -287,3 +287,5 @@ Konklusjon: *Bør sees av alle med selv den minste interesse for JS.*
 [bini-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Bini-ExpressingAbstractionAbstractingExpression.pdf?raw=true
 [smith-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Smith-ProjectLambda%28notes%29.pdf?raw=true
 [eich-slides]: http://brendaneich.github.com/Strange-Loop-2012/#/21
+[taylor-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Taylor-Humanity2.0.pdf?raw=true
+[kiselyov-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/sessions/Kiselyov-GuessLazily.pdf?raw=true

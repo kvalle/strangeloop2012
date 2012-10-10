@@ -154,7 +154,7 @@ Konklusjon: *Foredraget er definitivt verdt å se for den som er interessert i s
 
 
 
-## Elixir: Modern Programming for the Erlang VM (Jose Valim)
+## [Elixir: Modern Programming for the Erlang VM][valim-slides] (Jose Valim)
 
 - Språk rettet mot webutvikling laget for å eksponere Erlang VM på en god måte, og samtidig forbedre noen av svaketene til Erlang
 - Støtter hot code-swap
@@ -204,3 +204,4 @@ Konklusjon: *Greit og lite teknisk foredrag på slutten av dagen, men ikke noe j
 [herman-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Herman-Rust.pdf?raw=true
 [pollak-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Pollak-Visi.pdf?raw=true
 [raberg-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Raberg-CleverClasslessAndFree.pdf?raw=true
+[valim-slides]: https://github.com/strangeloop/strangeloop2012/blob/master/slides/elc/Valim-Elixir.pdf?raw=true
