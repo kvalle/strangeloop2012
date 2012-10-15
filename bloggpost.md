@@ -37,6 +37,8 @@ Med foredrag om Light Table, Catnip, aneditor/anterminal, og Bret Victor's "Taki
 Jeg fikk dessverre ikke sett noen av disse.
 Var dere innom nok til å ha en mening, eller bør vi droppe det fra oversikten?
 
+Jøran: Jeg tror vi kan ta det med. Dette henger egentlig tett sammen med funksjonell programmering og dynamiske språk som trend; man programmerer ved hjelp av raskest mulig feedback - og REPL over testing. Jeg er jævelig skeptisk, men folk snakket hvertfall mye om det :).
+
 *Annet jeg har glemt å ta med?*
 
 Personlige høydepunkter
@@ -48,7 +50,39 @@ Personlige høydepunkter
 
 ### Jøran
 
-*TODO*
+Jeg innledet oppholdet med to sesjoner training i JavaScript, Backbone og CoffeeScript. Begge deler falt litt gjennom for min del, da det ble litt i overkant enkle saker. Det er dog likevel hyggelig å få tatt en gjennomgang av ting man kan!
+
+Mitt hovedinntrykk av konferansen er: språk. Gjennom mine fire år som programmerer har jeg alltid sett programmeringsspråk som verktøy, men her ble jeg eksponert for en kultur der programmeringsspråk former hvordan man tenker på problemer. Jeg har leflet litt med funksjonell programmering tidligere, men jeg ser at jeg har veldig mye å lære.
+
+Og på StrangeLoop2012 var det et språk som gjaldt: Clojure. For en Java-utvikler var det tidvis mye å ta innover seg, men jeg tror det er ekstremt sunt å bli eksponert for en annen kultur innimellom.
+
+Mine høydepunkter inkluderte:
+
+1. *The State Of JavaScript (Brendan Eich)*
+  "Nobody wants to take credit... nobody wants to take the blame. So I take the blame"
+
+  Gøy å høre the "grandfather of JavaScript" snakke om språket som i løpet av ganske få år har vært både programmeringsverdens mest forhatte og elskede språk.
+
+  Brendan innledet med historien om hvordan JavaScript kort fortalt ble designet på 10 dager og sluppet på markedet før han på noen måte følte det var klart - og det plutselig var for sent å endre fordi "you can't break the web!".
+
+  Videre fortalte han om planene videre med ECMAScript 6 - et arbeid som selvsagt er svært møysommelig, da alle endringer helst skal kunne innføres uten at eksisterende kode bryter. Det er interessant å høre hvordan designerne av ECMAScript ser mot blant annet CoffeeScript når de designer JavaScript for fremtiden.
+
+  Til sist fortalte han om de mange prosjektene som foregår med JavaScript som VM nå. Det er helt åpenbart at han er minst like overrasket som alle andre over hvordan JavaScript har utviklet seg til å bli "the runtime of the web" - og hvor godt det fungerer.
+
+1. *The Database as a Value (Rick Hickey)*
+
+  Veldig fin presentasjon! Facinerende og inspirerende å se noen "finne opp" databasen på nytt med utgangspunkt i funksjonell programmering. Rich beskrev en database bestående av immutable datastrukturer som benytter seg av event sourcing, som gir andre løsninger på ACID-problemer enn det vi har sett for oss tidligere.
+
+1. *Famous Unsolved Codes: Kryptos (Elonka Dunin)*
+
+  [Kryptos|kryptos-wikipedia] er et kunstverk hos CIA på Langley. Den består - enkelt fortalt - av fire deler som alle utgjør en kryptografisk gåte. Med bakgrunn i informasjonssikkerhet synes jeg det var uendelig interessant å høre om hvordan folk har jobbet for å løse disse gåtene - og ikke minst hvilken entusiasme folk viser for det!
+
+  Et foredrag strengt tatt uten relevante faglige meritter for de fleste programmerere, men fortsatt ekstremt underholdende!
+
+  Og, hvis du vil ha en utfordring: den siste gåten er fortsatt ikke løst.
+
+
+Avslutningsvis vil jeg bare tipse deg som har lyst til å se på Clojure om LightTable. Du kan være i gang med å skrive Clojure om få minutter! http://app.kodowa.com/playground
 
 ### Kjetil
 
@@ -107,3 +141,4 @@ Oppsummering
 [quine-wikipedia]: http://en.wikipedia.org/wiki/Quine_(computing)
 [quine-kode]: https://github.com/webyrd/quines#generating-quines
 [sparse-code-wikipedia]: http://en.wikipedia.org/wiki/Sparse_coding
+[kryptos-wikipedia]: http://en.wikipedia.org/wiki/Kryptos
