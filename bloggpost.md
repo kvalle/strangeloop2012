@@ -1,13 +1,16 @@
 Erfaringer fra Strange Loop 2012
 ================================
 
-Den 23. til 25. september i år gikk den fjerde årlige [Strange Loop](https://thestrangeloop.com/) konferansen av stabelen i St. Louis, Missouri.
-
+I slutten av september i år gikk den fjerde årlige [Strange Loop](https://thestrangeloop.com/) konferansen av stabelen i St. Louis, Missouri. 
 Strange Loop er en leverandøruavhengig konferanse med fokus på nye og voksende teknologier.
-Presentasjonene spenner over temaer som programmeringspråk, alternaltive databaser, distribuerte systemer, mobil og web, og mer, og omfatter en blanding av teknologier som alt er tatt i bruk i industrien og innovative idéer som fortsatt hører hjemme i akademia.
+Presentasjonene spenner over temaer som programmeringspråk, alternaltive databaser, distribuerte systemer, mobil og web, og mer, og omfatter en blanding av både teknologier som alt er tatt i bruk i industrien og innovative idéer som fortsatt hører hjemme i akademia.
 
 Med foredrag som [We Really Don't Know How To Compute!][sussman-compute] (Gerald J. Sussman) og [Simple Made Easy][hickey-simple] (Rich Hickey) blant fjorårets keynotes hadde vi naturligvis høye forventninger i forkant av konferansen.
+
 Dette er en erfaringsrapport og oppsummering fra BEKKs tre utsendte.
+Hva hørte vi om? Hva lærte vi? 
+Hva var de kuleste foredragene? 
+Og hva kan være viktig å ta med seg videre?
 
 ![Hovedscenen på Peabody Opera House](https://raw.github.com/kvalle/strangeloop2012/master/bilder/peabody-opera.jpg)
 
@@ -17,13 +20,60 @@ Overordnede temaer/trender
 Enkelte temaer ble nevnt igjen og igjen i forskjellige foredrag.
 Dette er trendene vi føler krystaliserte seg mest tydelig på årets konferanse.
 
-### Tema 1: Re-tenking av databasen (og relasjonell programmering)
+### Tema 1: Re-tenking av databasen 
 
-- Rich Hickey: Datomic / the database as a value
-- Nathan Marz: The Lambda Architecture / runaway complexity
+Et av temaene under konferansen var idéen om at dagens databasesystemer er altfor dårlige.
+De to viktigste foredragene under dette temaet var Nathan Marz med [Runaway complexity in Big Data... and a plan to stop it][marz-abstract] og Rich Hickey sitt [The Database as a Value][hickey-abstract].
+Utgangspunktet for disse foredragene oppsummeres forholdsvis godt i dette svært provokative sitatet fra Marz:
 
-Dette er også knyttet opp mot foredraget om Datalog og plassen dette har som query-engine i de nye løsningene.
-I tillegg til datalog/datomic har vi også foredragene om lisp-variantene av dette, miniKanren og core.logic.
+> The relational database will be a footnote in history.
+> Not because of SQL, restrictive schemas, or scalability issues.
+> But because of *fundamental flaws* in the RDBMS approach to managing data.
+
+Hva er så disse svakhetene?
+Vel, flere ble tatt opp, og forslag til løsninger presentert.
+La oss gå igjennom noen av dem.
+
+**Problem: Muterbar tilstand**
+
+Det første, og viktigste, problemet er muterbar tilstand.
+Både Marz og Hickey identifiserer dette som hovedkilden til kompleksitet i systemene vi bruker i dag, og begge forslår løsninger som basserer seg på immutability.
+
+Ikke-muterbare systemer er fundamentalt enklere — vi sitter igjen med kun CR i stedet for CRUD, og den eneste skriveoperasjonen som er igjen blir å legge til nye data.
+
+*TODO; hvordan*
+
+**Problem: Sammenblanding av lagring og spørring**
+
+Dette er et spørsmål om normalisering av data.
+Vi ønsker oss å ha dataene våre i pene og ryddige normaliserte former, men blir ofte tvunget til å denormalisere for å få akseptabel ytelse på spørringer.
+
+Dette skyldes måten dagens systemer blander sammen to ansvarsområder: lagring av data, og behandling av spørringer på disse dataene.
+Løsningen er naturligvis å dele opp ansvarsområdene, slik at hver oppgave kan løses på best mulige måte.
+
+*TODO; hvordan*
+
+**Problem: Schemaer er implementert feil**
+
+Alle vet jo at schemaer alltid er i veien.
+De er vanskelige å endre på, altfor restriktive, og dessuten krever de irriterende oppsett og konfigurasjon.
+
+Men dette er problemer knyttet til implementasjonen av schema i dagens RDBMS, ikke til schemaer som konsept. 
+Så hva er et schema egentlig? 
+Det er en funksjon som tar inn en enhet med data og avgjør hvorvidt disse dataene er *gyldige*. 
+Schemaer hindrer oss i å lagre korrupte data i databasen!
+
+*TODO; hvordan*
+
+**Løsninger**
+
+*TODO; litt om løsningene Marz og Hickey beskriver*
+
+### Tema 1¾: Relasjonell programmering
+
+*TODO?*
+
+	Første tema er også knyttet opp mot foredraget om Datalog og plassen dette har som query-engine i de nye løsningene. I tillegg til datalog/datomic har vi også foredragene om lisp-variantene av dette, miniKanren og core.logic.
 
 ### Tema 2: Transpilering til JS
 
@@ -98,7 +148,7 @@ Dagen før konferansen startet for fullt, på *preconference day*, kunne en velg
 Jeg valgte sistnevnte, og tilbrakte en lang dag med svært mange spennende foredrag om alt fra Mozillas nye språk [Rust](http://www.rust-lang.org/) til flere funksjonelle språk som kompilerer til JavaScript.
 Selv om ingen av foredragene fra ELC individuelt sett er blant mine absolutte høydepunkter fra konferansen, var det en svært bra dag.
 
-Høydepunktene var derimot de følgende tre foredragene, presentert i brutalt prioritert rekkefølge:
+Høydepunkter var derimot de følgende tre foredragene, presentert i brutalt prioritert rekkefølge:
 
 1. *Relational Programming in miniKanren (Daniel Friedman, William Byrd)*
 	
@@ -126,8 +176,7 @@ Høydepunktene var derimot de følgende tre foredragene, presentert i brutalt pr
 	Modellene bruker Grok til å detektere avvik og å forutsi fremtidige data i strømmen.
 
 	Groks arkitektur, som er inspirert av cortex, gjør det i stand til å detektere spatial-temporale mønstre på en unik måte.
-	Et annet spennende aspekt er hvordan data representeres basert på idéer fra [sparse coding][sparse-code-wikipedia], noe som gir spennende muligheter for representasjon av semantisk mening.
-
+	Et annet spennende aspekt er hvordan data representeres basert på idéer fra [sparse coding][sparse-code-wikipedia], noe som gir spennende muligheter for representasjon av semantisk mening — og ikke minst automatisk læring av denne!
 
 PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg også delt [notatene jeg skrev iløpet av konferansen][notater-kjetil] på GitHub.
 
@@ -139,7 +188,8 @@ Oppsummering
 
 Det er også verdt å nevne at videoer av alle foredragene [slippes gradvis de kommende månedene](https://thestrangeloop.com/news/strange-loop-2012-video-schedule).
 
-
+[hickey-abstract]: https://thestrangeloop.com/sessions/the-database-as-a-value
+[marz-abstract]: https://thestrangeloop.com/sessions/runaway-complexity-in-big-data-and-a-plan-to-stop-it
 [elc]: http://emerginglangs.com/
 [sussman-compute]: http://www.infoq.com/presentations/We-Really-Dont-Know-How-To-Compute
 [hickey-simple]: http://www.infoq.com/presentations/Simple-Made-Easy
