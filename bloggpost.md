@@ -26,24 +26,34 @@ Et av temaene under konferansen var idéen om at dagens databasesystemer er altf
 De to viktigste foredragene under dette temaet var Nathan Marz med [Runaway complexity in Big Data... and a plan to stop it][marz-abstract] og Rich Hickey sitt [The Database as a Value][hickey-abstract].
 Utgangspunktet for disse foredragene oppsummeres forholdsvis godt i dette svært provokative sitatet fra Marz:
 
-> The relational database will be a footnote in history.
+> "The relational database will be a footnote in history.
 > Not because of SQL, restrictive schemas, or scalability issues.
-> But because of *fundamental flaws* in the RDBMS approach to managing data.
+> But because of *fundamental flaws* in the RDBMS approach to managing data."
+
+Løsningene Marz presenterer ligger på det konseptuelle planet, som en rekke idéer han har samlet i det han kaller *The Lambda Architecture*.
+Rich Hickey presenterte derimot en mer håndfast løsning, i form av [Datomic][datomic].
+Til tross for små forskjeller i fokus og arkitektur, løser begge problemene på påfallende like måter.
 
 Hva er så disse svakhetene?
-Vel, flere ble tatt opp, og forslag til løsninger presentert.
-La oss gå igjennom noen av dem.
+Vel, blant de mange som ble tatt opp, a oss ta en titt på de to viktigste.
 
-**Problem: Muterbar tilstand**
+**Problem 1: Muterbar tilstand**
 
 Det første, og viktigste, problemet er muterbar tilstand.
 Både Marz og Hickey identifiserer dette som hovedkilden til kompleksitet i systemene vi bruker i dag, og begge forslår løsninger som basserer seg på immutability.
 
 Ikke-muterbare systemer er fundamentalt enklere — vi sitter igjen med kun CR i stedet for CRUD, og den eneste skriveoperasjonen som er igjen blir å legge til nye data.
 
-*TODO; hvordan*
 
-**Problem: Sammenblanding av lagring og spørring**
+Dette løses ved å introdusere *tid* som et konsept i kontekst av data.
+Alle data som lagres blir stemplet med tidspunktet lagringen skjedde.
+Nye data kan alltid skrives, men endring og sletting av gamle data forbys.
+Oppdateringer gjøres i praksis ved å lagre et nytt faktum med et nyere timestamp.
+
+Slik tilrettelegges det for at spørringer kan serveres de *nåværende* versjoner av data, mens det også er mulig å grave i historiske data hvis ønskelig.
+Det er mer til dette enn vi har mulighet til å diskutere her, men kort oppsummert minner det svært om måten versjonskontrollsystemer fungerer.
+
+**Problem 2: Sammenblanding av lagring og spørring**
 
 Dette er et spørsmål om normalisering av data.
 Vi ønsker oss å ha dataene våre i pene og ryddige normaliserte former, men blir ofte tvunget til å denormalisere for å få akseptabel ytelse på spørringer.
@@ -51,9 +61,19 @@ Vi ønsker oss å ha dataene våre i pene og ryddige normaliserte former, men bl
 Dette skyldes måten dagens systemer blander sammen to ansvarsområder: lagring av data, og behandling av spørringer på disse dataene.
 Løsningen er naturligvis å dele opp ansvarsområdene, slik at hver oppgave kan løses på best mulige måte.
 
-*TODO; hvordan*
+Denne separasjonen av lagring og spørring, er også løst på liknende måter i de to systemene.
+I Marz sin Lambda Achitecture gjøres spørringer mot såkalte *precomputed views* som lages av dataene.
+Disse er det to typer av: batch views og realtime views.
+Førstnevnte er, som navnet tilsier, oppdatert av batch-jobber som forsøker å holde viewene up to date.
+De nyeste dataene, det som enda ikker er oppdatert i batch views, holdes i realtime views som kontinuerlig oppdateres.
+Et liknende skille finnes i Datomics arkitektur, men her er det kun indekser som oppdateres på denne måten.
 
-**Problem: Schemaer er implementert feil**
+Ved å dele opp slik kan en eksponere dataene på den måten som er mest effektiv for spørringene, og en sikrer at lesing og skriving av data ikke går i beina på hverandre.
+Det gjør også at en ikke er avhengig av en query engine som ligger sammen med lagringstjenesten, og en kan flytte spørremotoren nærmere klientene eller benytte forskjellige spørremotorer og språk i forskjellige kontekster.
+
+<!-- 
+
+**Problem 3: Schemaer er implementert feil**
 
 Alle vet jo at schemaer alltid er i veien.
 De er vanskelige å endre på, altfor restriktive, og dessuten krever de irriterende oppsett og konfigurasjon.
@@ -61,27 +81,28 @@ De er vanskelige å endre på, altfor restriktive, og dessuten krever de irriter
 Men dette er problemer knyttet til implementasjonen av schema i dagens RDBMS, ikke til schemaer som konsept. 
 Så hva er et schema egentlig? 
 Det er en funksjon som tar inn en enhet med data og avgjør hvorvidt disse dataene er *gyldige*. 
-Schemaer hindrer oss i å lagre korrupte data i databasen!
+Schemaer hindrer oss i å lagre korrupte data i databasen! 
 
-*TODO; hvordan*
+-->
 
-**Løsninger**
-
-*TODO; litt om løsningene Marz og Hickey beskriver*
-
-### Tema 1¾: Relasjonell programmering
+### Tema 2: Relasjonell programmering
 
 *TODO?*
 
-	Første tema er også knyttet opp mot foredraget om Datalog og plassen dette har som query-engine i de nye løsningene. I tillegg til datalog/datomic har vi også foredragene om lisp-variantene av dette, miniKanren og core.logic.
+	På ELC var det et intro-foredrag om Datalog: "The re-emergence of Datalog" eller noe slikt.
+	Det var også et annet foredag om relasjonell programmering, programmeringspråket Bandicoot, på ELC.
+	Datomic, som Rich Hickey presenterte, bruker en implementasjon av Datalog til å manipulrere og spør på data.
+	Datalog/datomic viker som en smart måte å tilnærme seg akkurat dette problemet på.
+	I tillegg til datalog/datomic har vi også foredragene om lisp-variantene av samme ulla: 
+	miniKanren og core.logic (som er en implementasjon av (mini)Kanren i Clojure.
 
-### Tema 2: Transpilering til JS
+### Tema 3: Transpilering til JS
 
 Språk som transpilerer til JS var definitivt hot.
 Det ble presentert flere språk på ELC, i tillegg til Dart, ClojureScript, JVM i JS, etc på selve konferansen.
 Selvsagt i tillegg til Eichs avsluttende keynote om JS's fremtid.
 
-### Tema 3: "Re-imagining Your Development Environment"
+### Tema 4: "Re-imagining Your Development Environment"
 
 Med foredrag om Light Table, Catnip, aneditor/anterminal, og Bret Victor's "Taking Off the Blindfold" virker det som om dette også kvalifiserer som et slags tema for konferansen.
 Jeg fikk dessverre ikke sett noen av disse.
@@ -188,6 +209,7 @@ Oppsummering
 
 Det er også verdt å nevne at videoer av alle foredragene [slippes gradvis de kommende månedene](https://thestrangeloop.com/news/strange-loop-2012-video-schedule).
 
+[datomic]: http://www.datomic.com/
 [hickey-abstract]: https://thestrangeloop.com/sessions/the-database-as-a-value
 [marz-abstract]: https://thestrangeloop.com/sessions/runaway-complexity-in-big-data-and-a-plan-to-stop-it
 [elc]: http://emerginglangs.com/
