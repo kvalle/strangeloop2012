@@ -121,6 +121,7 @@ Elm: Making the Web Functional (Evan Czaplicki)
 - Funksjonelt og typesikkert språk som kompierer til HTML, CSS og JS
 - Hjemmeside: [elm-lang.org](http://elm-lang.org/)
     - Inkludert en [interaktiv editor](http://elm-lang.org/edit/examples/Reactive/Transforms.elm)
+- GUI defineres programmatisk og/eller vha Markdown
 - Basert på *reaktiv programmering*
     - Verdier endrer ikke tilstand
     - Brukerinnput via `signals`
@@ -131,51 +132,83 @@ Elm: Making the Web Functional (Evan Czaplicki)
 
 ---
 
-# The Reemergence of Datalog (Michael Fogus)
+# Datalog
+
+The Reemergence of Datalog (Michael Fogus)
 
 - Datalog er et programmeringspråk for å definere deklarative regler og spørringer på data
-- Gammel idé, stammer fra 1970-tallet.
-- Ikke turing-komplett
-- Basert på Prolog
-- Forsøker å løse (blant annet) følgende problemer med Prolog:
-  - Rekkefølge på statements har signifikans
-  - Er ikke garantert å returnere
-  - Deklarativ infeksjon: Prolog er ikke deklarativt nok!
-
-### Eksempel:
-
-facts:
-
-  parent(bill,mary).
-  parent(mary,john).
-
-relasjoner:
-
-  ancestor(X,Y) :- parent(X,Y).
-  ancestor(X,Y) :- parent(X,Z),ancestor(Z,Y).
-
-spørringer: (`x` vil her returneres som john og mary)
-
-  ?- ancestor(bill,X).
-
-Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det finnes flere implementasjoner, slik som Datomic og Cascalog.
-
-Konklusjon: *Grei innføring til Datalog. Verdt å se hvis en, som meg, ikke er kjent med Datalog eller noen av implementasjonene fra før.*
+- Basert på et subset av Prolog, stammer fra 1970-tallet.
+- Forbedringer ift Prolog
+  - Er garantert å returnere
+  - Rekkefølge ikke signifikant
+  - Ingen "deklarativ infeksjon"
+- Finnes flere implementasjoner: Datomic og Cascalog.
 
 ---
 
-# Roy (Brian McKenna)
+# Eksempel
 
-- Statisk typet funksjonelt språk som er skrevet i og transpilerer til JS
-- Fortsatt under utvikling
-- Ment for å gjøre utviklere i stand til å skrive tryggere og mer testbar kode på web
-- Type-inferens og compile-time type-sjekking
-- Signifikant whitespace 
-- Dokumentasjon, enkelt test-miljø, og noen eksempler på roy.brianmckenna.org
-- Best beskrevet som et kryssprodukt av CoffeeScript og Ocaml eller Haskell
-- (Foredraget har dagens hittil største #ithipster-faktor)
+facts:
 
-Konklusjon: *Interessant, selv om språket ikke er fullstendig ferdig enda. Verdt å se på video.*
+    parent(bill,mary).
+    parent(mary,john).
+
+relasjoner:
+
+    ancestor(X,Y) :- parent(X,Y).
+    ancestor(X,Y) :- parent(X,Z),ancestor(Z,Y).
+
+spørringer: 
+
+    ?- ancestor(bill,X).
+
+`x` vil her returneres som `john` og `mary`
+
+---
+
+# Funksjonelt → JS #2
+
+Roy (Brian McKenna)
+
+- Funksjonelt språk som er skrevet i og transpilerer til JS
+    - Statisk typing
+    - Type-inferens
+    - Signifikant whitespace 
+- Nærmest et kryssprodukt av CoffeeScript og OCaml/Haskell
+- Motivasjon: Tryggere og mer testbar kode på web
+- [roy.brianmckenna.org](http://roy.brianmckenna.org):
+    - Dokumentasjon, enkelt test-miljø, og noen eksempler
+
+*Uferdig men interessant språk*
+
+---
+
+# Eksempel
+
+Roy
+
+    let gcd a b =
+      if b == 0 then
+        a
+      else
+        gcd b (a % b)
+
+    console.log (gcd 49 35)
+
+JS
+
+    (function() {
+    var gcd = function(a, b) {
+        return (function() {
+            if(b == 0) {
+                return a;
+            } else {
+                return gcd(b, (a % b));
+            }
+        })();
+    };
+    console.log(gcd(49, 35));
+    })();
 
 ---
 
