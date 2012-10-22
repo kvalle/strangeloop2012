@@ -42,7 +42,161 @@ Kjetil Valle
 
 ---
 
-...
+# Emerging Languages Camp (ELC)
+
+- Frittstående event arrangert i sammarbeid med StrangeLoop
+- Tidligere blitt holdt 2 ganger sammen med OSCON
+- [emerginglangs.com](http://emerginglangs.com/)
+- 12 foredrag à 30 minutter om forskjellige språk
+
+---
+
+# Transpilering til JavaScript
+
+- Jeremy Ashkenas (skaperen av CoffeeScript) pratet om trenden at mange nye språk kompilerer til JS.
+- Ref. Holgers lyntale sist.
+- *Transpilere*: å kompilere kildekode i et språk til kildekode i et annet språk med omtrent samme abstraksjonsnivå.
+- Fordel for språkdesignere at en slipper å tenke på å konstruere en ny runtime, trenger bare fokusere på språket.
+- Fordel for utviklere at alt kjører på den "gamle gode" stacken.
+- Ulempe: Det kan være vanskelig å definere ny semantikk i språket, ettersom konseptene må oversettes til semantikk som eksisterer i JS.
+
+---
+
+# Bandicoot: code reuse for the relational model (Ostap Cherkashin, Julius Chrobak)
+
+- Bandicoot: språk og runtime for å forbedre grensesnittet mot den relasjonelle modellen
+- Use case: Spørringer mot datasett (eksempel: csv-filer)
+- Spørringer kan minne om det en er vant med fra SQL, med relasjonell algebra og sett-baserte operasjoner
+- Spørringer kan defineres som funksjoner, hvilke kan komponeres
+- Funksjoner tildeles URL-er og kan aksesseres som et REST API
+- Støtter ACID
+- Detaljer: http://bandilab.org/specification.html
+- Prøv ut interaktivt test-miljø online: mingle.io
+- Ser for meg at jeg kommer til å leke litt med dette, men tror ikke det er modent for å bruke til noen seriøse applikasjoner enda
+
+Konklusjon: *Artig presentasjon/språk for alle som er nyskjerrige på sett-basert programmering/datamanipulasjon.*
+
+---
+
+# Elm: Making the Web Functional (Evan Czaplicki)
+
+- Funksjonelt og typesikkert språk som kompierer til HTML, CSS og JS
+- Målsetning: Gjøre programmering (inkludert GUI) enklere
+- http://elm-lang.org/
+  - Har en interaktiv editor for testing online: http://elm-lang.org/edit/examples/Reactive/Transforms.elm
+- Basert på reaktiv programmering som gjør at enddringer propageres ut til GUI
+  - Verdier kan ikke endre tilstand, men det finnes såkalte "time-varying values" kalt `signals` som til en hver tid holder snapshot-verdien til bruker-inputs.
+  - Signals kan sees på som en strøm av events, og koden oppdateres eller "kjøres på nytt" hver gang noe endres.
+  - Eksempler på signals: `Mouse.click`, `Time.every 4`
+
+Skal definitivt se nærmere på dette.
+
+Konklusjon: *Vell verdt å se for alle som er interessert i programmering på web eller funksjonell programmering*
+
+---
+
+# The Reemergence of Datalog (Michael Fogus)
+
+- Datalog er et programmeringspråk for å definere deklarative regler og spørringer på data
+- Gammel idé, stammer fra 1970-tallet.
+- Ikke turing-komplett
+- Basert på Prolog
+- Forsøker å løse (blant annet) følgende problemer med Prolog:
+  - Rekkefølge på statements har signifikans
+  - Er ikke garantert å returnere
+  - Deklarativ infeksjon: Prolog er ikke deklarativt nok!
+
+### Eksempel:
+
+facts:
+
+  parent(bill,mary).
+  parent(mary,john).
+
+relasjoner:
+
+  ancestor(X,Y) :- parent(X,Y).
+  ancestor(X,Y) :- parent(X,Z),ancestor(Z,Y).
+
+spørringer: (`x` vil her returneres som john og mary)
+
+  ?- ancestor(bill,X).
+
+Datalog er et språk, men ingen implementasjon (på samme linje som SQL). Det finnes flere implementasjoner, slik som Datomic og Cascalog.
+
+Konklusjon: *Grei innføring til Datalog. Verdt å se hvis en, som meg, ikke er kjent med Datalog eller noen av implementasjonene fra før.*
+
+---
+
+# Roy (Brian McKenna)
+
+- Statisk typet funksjonelt språk som er skrevet i og transpilerer til JS
+- Fortsatt under utvikling
+- Ment for å gjøre utviklere i stand til å skrive tryggere og mer testbar kode på web
+- Type-inferens og compile-time type-sjekking
+- Signifikant whitespace 
+- Dokumentasjon, enkelt test-miljø, og noen eksempler på roy.brianmckenna.org
+- Best beskrevet som et kryssprodukt av CoffeeScript og Ocaml eller Haskell
+- (Foredraget har dagens hittil største #ithipster-faktor)
+
+Konklusjon: *Interessant, selv om språket ikke er fullstendig ferdig enda. Verdt å se på video.*
+
+---
+
+# Julia: A Fast Dynamic Language For Technical Computing (Stefan Karpinski)
+
+- Problem: Det finnes mange tekniske språk, men ingen general purpose. Løsning: Julia?
+  - Med tekniske språk menes språk som Matlab, SciPy, etc.
+- Har som mål å oppnå uttrykk-/lesbarheten til dynamiske språk som Ruby og Python med noe som nærmer seg ytelsen til C++ eller Java
+- Dynamisk, multiple dispatch, sofistikert parametrisk typesystem
+- Syntaxen likner på MatLab
+- Rammer/føringer for språket:
+  - "Interactive, productive, tangible"
+  - Helhetlig typesystem (ingen skille mellom "primitiver" og "objekter")
+  - Effektve tall-arrays
+  - Matte-operatorer som funksjoner
+- Mangler gode grafikk-biblioteker
+  - Finnes visstnok integrasjoner med matplotlib, gnuplot, og andre
+
+Konklusjon: *Interessant foredrag om en er interessert i slike språk. På video ville jeg nok skipppet rastk igjennom selve foredraget, og kun sett demo-biten for å få et inntrykk av språket.*
+
+---
+
+# Rust (David Herman)
+
+- Nytt programmeringspråk laget av Mozilla Research
+- Skapt for å møte behovet for et godt språk for å implementere browsere
+- "Safe, concurrent, fast"
+- Ment for å utvikle pålitlige og effektive systemer, designet for å støtte samtidighet og utnytte moderne hardware
+- Høyt fokus på isolasjon og minnesikkerhet
+- "The love child of C++, Erlang and Haskell"
+- Henter ideer til henholdsvis ytelse, concurrency og typer fra de over nevnte
+- Har støtte for 3 forskjellige typer pekere, inspirert av C++
+- Funksjonalitet/kode kan deles opp i "tasks" som alle har sin egen heap og ikke kan aksessere andre minnet til andre tasks.
+  - Fint for å, for eksempel, implementere tabs i en browser
+  - Tasks kan kommunisere vha meldinger (åpenbart inpirert av Erlang)
+- rust-lang.org
+- Virker som Mozillas svar på Go
+  - En del mer low-level og mer komplekst, men gir samtidig mer kontroll over minne, etc
+
+Konklusjon: *Foredraget er definitivt verdt å se for den som er interessert i språket, men er tidvis forholdsvis teknisk.*
+
+---
+
+# Elixir: Modern Programming for the Erlang VM (Jose Valim)
+
+- Språk rettet mot webutvikling laget for å eksponere Erlang VM på en god måte, og samtidig forbedre noen av svaketene til Erlang
+- Støtter hot code-swap
+- Mål:
+  - Produktivitet
+    - alt er uttrykk + makroer -> DSLer
+  - Utvidbarhet gjennom moduler
+  - Kompatibilietet med Erlang.
+    - Elixir og Erlang deler typer og bytecode og kan derfor kalle hverandre uten ytelsestap
+- Syntaktisk lettere inspirert av Ruby
+- Dokumentasjon som førsteklasses element i språket, og lett tilgjengelig i REPL
+
+Konklusjon: *Spennende foredrag. Verdt å sjekke ut for alle som kjenner litt Erlang fra før, eller som liker webutvikling og vil lage noe som skal kjøre distribuert og skalere bra.*
 
 ---
 
