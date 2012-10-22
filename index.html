@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StrangeLoop 2012</title>
+    <title>Oppsummering SL2012</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <script src="https://github.com/downloads/gnab/remark/remark-0.3.1.min.js" type="text/javascript">
@@ -32,7 +32,7 @@
 
 # Oppsummering av SL2012
 
-## Ting jeg syntes var kult på årets StrangeLoop
+## med fokus på språk
 
 2012-10-24
 
@@ -48,9 +48,11 @@ Kjetil Valle
 
 1 rom
 
-~200 it-hipstere
+10 timer
 
-12 foredrag à 30 minutter
+12 foredrag
+
+~200 it-hipstere
 
 [emerginglangs.com](http://emerginglangs.com/)
 
@@ -121,8 +123,7 @@ Bruk
 Elm: Making the Web Functional (Evan Czaplicki)
 
 - Funksjonelt og typesikkert språk som kompierer til HTML, CSS og JS
-- Hjemmeside: [elm-lang.org](http://elm-lang.org/)
-    - Inkludert en [interaktiv editor](http://elm-lang.org/edit/examples/Reactive/Transforms.elm)
+- [elm-lang.org](http://elm-lang.org/)
 - GUI defineres programmatisk og/eller vha Markdown
 - Basert på *reaktiv programmering*
     - Verdier endrer ikke tilstand
@@ -131,6 +132,26 @@ Elm: Making the Web Functional (Evan Czaplicki)
         - "strøm av events"
         - GUI oppdateres ved hver event
     - Eksempler på signals: `Mouse.click`, `Time.every 4`
+
+---
+
+# Demo
+
+Eksempel på signals i [interaktiv editor](http://elm-lang.org/edit/examples/Reactive/Transforms.elm)
+
+    import Signal.Mouse (position)
+    import Signal.Window (dimensions)
+
+    myBlue  = rgb 0 85 170
+    myGreen = rgba 28 267 85 0.5
+
+    scene (x,y) (w,h) =
+      collage w h [ rotate (toFloat (x+y) / 1000) $
+                    filled myBlue  $ ngon 4 100 (200,200)
+                  , filled myGreen $ ngon 5 30 (x,y)
+                  ]
+
+    main = lift2 scene position dimensions
 
 ---
 
@@ -214,60 +235,69 @@ JS
 
 ---
 
-# Julia: A Fast Dynamic Language For Technical Computing (Stefan Karpinski)
+# Julia
 
-- Problem: Det finnes mange tekniske språk, men ingen general purpose. Løsning: Julia?
-  - Med tekniske språk menes språk som Matlab, SciPy, etc.
-- Har som mål å oppnå uttrykk-/lesbarheten til dynamiske språk som Ruby og Python med noe som nærmer seg ytelsen til C++ eller Java
-- Dynamisk, multiple dispatch, sofistikert parametrisk typesystem
-- Syntaxen likner på MatLab
-- Rammer/føringer for språket:
-  - "Interactive, productive, tangible"
-  - Helhetlig typesystem (ingen skille mellom "primitiver" og "objekter")
-  - Effektve tall-arrays
-  - Matte-operatorer som funksjoner
-- Mangler gode grafikk-biblioteker
-  - Finnes visstnok integrasjoner med matplotlib, gnuplot, og andre
+Julia: A Fast Dynamic Language For Technical Computing (Stefan Karpinski)
 
-Konklusjon: *Interessant foredrag om en er interessert i slike språk. På video ville jeg nok skipppet rastk igjennom selve foredraget, og kun sett demo-biten for å få et inntrykk av språket.*
-
----
-
-# Rust (David Herman)
-
-- Nytt programmeringspråk laget av Mozilla Research
-- Skapt for å møte behovet for et godt språk for å implementere browsere
-- "Safe, concurrent, fast"
-- Ment for å utvikle pålitlige og effektive systemer, designet for å støtte samtidighet og utnytte moderne hardware
-- Høyt fokus på isolasjon og minnesikkerhet
-- "The love child of C++, Erlang and Haskell"
-- Henter ideer til henholdsvis ytelse, concurrency og typer fra de over nevnte
-- Har støtte for 3 forskjellige typer pekere, inspirert av C++
-- Funksjonalitet/kode kan deles opp i "tasks" som alle har sin egen heap og ikke kan aksessere andre minnet til andre tasks.
-  - Fint for å, for eksempel, implementere tabs i en browser
-  - Tasks kan kommunisere vha meldinger (åpenbart inpirert av Erlang)
-- rust-lang.org
-- Virker som Mozillas svar på Go
-  - En del mer low-level og mer komplekst, men gir samtidig mer kontroll over minne, etc
-
-Konklusjon: *Foredraget er definitivt verdt å se for den som er interessert i språket, men er tidvis forholdsvis teknisk.*
+- Ment som *general purpose* teknisk språk (a'la MatLab, SciPy, etc)
+- Forsøker å kombinere:
+    - Uttrykkbarheten til Ruby eller Python
+    - Ytelsen til C++ eller Java
+- Features: 
+    - Dynamisk
+    - Multiple dispatch
+    - Helhetlig typesystem (ingen skille mellom "primitiver" og "objekter")
+    - Effektve tall-arrays
+    - Matte-operatorer som funksjoner
+- Dårligere enn alternaltivene (MatLab, SciPy, etc) på grafikkbiblioteker
+- [julialang.org](http://julialang.org/)
 
 ---
 
-# Elixir: Modern Programming for the Erlang VM (Jose Valim)
+# Kjapp demo: 
 
-- Språk rettet mot webutvikling laget for å eksponere Erlang VM på en god måte, og samtidig forbedre noen av svaketene til Erlang
-- Støtter hot code-swap
-- Mål:
-  - Produktivitet
-    - alt er uttrykk + makroer -> DSLer
-  - Utvidbarhet gjennom moduler
-  - Kompatibilietet med Erlang.
-    - Elixir og Erlang deler typer og bytecode og kan derfor kalle hverandre uten ytelsestap
-- Syntaktisk lettere inspirert av Ruby
-- Dokumentasjon som førsteklasses element i språket, og lett tilgjengelig i REPL
+Julia [REPL](http://julia.forio.com)
 
-Konklusjon: *Spennende foredrag. Verdt å sjekke ut for alle som kjenner litt Erlang fra før, eller som liker webutvikling og vil lage noe som skal kjøre distribuert og skalere bra.*
+    # jukseark
+    x = cumsum(randn(500))
+    plot(x)
+    plot(x->sin(x^2)/x, -2pi, 2pi)
+
+---
+
+# Rust
+
+Rust (David Herman)
+
+- Programmeringspråk utviklet ved Mozilla Research
+- *"Safe, concurrent, fast"*
+- [rust-lang.org](http://rust-lang.org)
+- Virker som Mozillas svar på Go: En del mer low-level og mer komplekst, men gir samtidig mer kontroll over minne, etc
+- Ment for utvikling av politlige systemer
+    - Høyt fokus på isolasjon og minnesikkerhet
+    - Funksjonalitet/kode kan deles opp i "tasks" som alle har sin egen heap og ikke kan aksessere andre minnet til andre tasks.
+- Effektivitet:
+    - Tilrettelegger for samtidighet og utnytte moderne hardware
+    - Har støtte for 3 forskjellige typer pekere
+- Inspirert av *C++* (ytelse), *Erlang* (concurrency) og Haskell (typer)
+
+---
+
+# Elixir
+
+Elixir: Modern Programming for the Erlang VM (Jose Valim)
+
+- Språk rettet mot webutvikling på Erlang VM
+- Syntaktisk inspirert av Ruby
+- Features:
+    - Alt evalueres som uttrykk
+    - Makroer
+    - God støtte for å skrive DSL-er
+    - Mixins
+    - Dokumentasjon som førsteklasses element i språket
+- Bygger på Erlangs styrker: *skalerbarhet, samtidighet, feiltoleranse*
+    - Deler typer og bytecode
+    - Støtter hot swap
 
 ---
 
