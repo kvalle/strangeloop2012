@@ -79,7 +79,7 @@ Bandicoot: code reuse for the relational model (Ostap Cherkashin, Julius Chrobak
 - Spørringer kan defineres som funksjoner
   - Basert på relasjonell algebra og sett-baserte operasjoner
 - Støtter transaksjoner/ACID
-- Funkjoner/spørringer eksponert via URL-er
+- Funksjoner/spørringer eksponert via URL-er
 - Hjemmeside: [bandilab.org](http://bandilab.org/)
 - Interaktivt online test-miljø: [mingle.io](http://mingle.io)
 
@@ -128,7 +128,7 @@ Elm: Making the Web Functional (Evan Czaplicki)
 - Basert på *reaktiv programmering*
     - Verdier endrer ikke tilstand
     - Brukerinnput via `signals`
-        - "time-varying values" som holder på snapshots bruker-verdier
+        - "time-varying values" som holder på snapshots av bruker-verdier
         - "strøm av events"
         - GUI oppdateres ved hver event
     - Eksempler på signals: `Mouse.click`, `Time.every 4`
@@ -193,12 +193,12 @@ spørringer:
 
 Roy (Brian McKenna)
 
+- Motivasjon: Tryggere og mer testbar kode på web
 - Funksjonelt språk som er skrevet i og transpilerer til JS
     - Statisk typing
     - Type-inferens
     - Signifikant whitespace 
 - Nærmest et kryssprodukt av CoffeeScript og OCaml/Haskell
-- Motivasjon: Tryggere og mer testbar kode på web
 - [roy.brianmckenna.org](http://roy.brianmckenna.org):
     - Dokumentasjon, enkelt test-miljø, og noen eksempler
 
@@ -239,12 +239,12 @@ JS
 
 Julia: A Fast Dynamic Language For Technical Computing (Stefan Karpinski)
 
-- Ment som *general purpose* teknisk språk (a'la MatLab, SciPy, etc)
+- Ment som *general purpose* teknisk språk
 - Forsøker å kombinere:
-    - Uttrykkbarheten til Ruby eller Python
-    - Ytelsen til C++ eller Java
+    1. Uttrykkbarheten til Ruby eller Python
+    1. Ytelsen til C++ eller Java
 - Features: 
-    - Dynamisk
+    - Dynamisk typing
     - Multiple dispatch
     - Helhetlig typesystem (ingen skille mellom "primitiver" og "objekter")
     - Effektve tall-arrays
@@ -261,6 +261,7 @@ Julia [REPL](http://julia.forio.com)
     # jukseark
     x = cumsum(randn(500))
     plot(x)
+    plot(rand(100)*10, "bar")
     plot(x->sin(x^2)/x, -2pi, 2pi)
 
 ---
