@@ -9,7 +9,7 @@ Med foredrag som [We Really Don't Know How To Compute!][sussman-compute] (Gerald
 
 Dette er en erfaringsrapport og oppsummering fra BEKKs tre utsendte.
 Hva hørte vi om? Hva lærte vi? 
-Hva var de kuleste foredragene? 
+Hvilke foredrag var kulest? 
 Og hva kan være viktig å ta med seg videre?
 
 ![Hovedscenen på Peabody Opera House](https://raw.github.com/kvalle/strangeloop2012/master/bilder/peabody-opera.jpg)
@@ -34,7 +34,7 @@ Løsningene Marz presenterer ligger på det konseptuelle planet, som en rekke id
 Rich Hickey presenterte derimot en mer håndfast løsning, i form av [Datomic][datomic].
 Til tross for små forskjeller i fokus og arkitektur, løser begge problemene på påfallende like måter.
 
-Hva er så disse svakhetene?
+Hva er så disse svakhetene med dagens RDBMSer?
 Vel, blant de mange som ble tatt opp, a oss ta en titt på de to viktigste.
 
 **Problem 1: Muterbar tilstand**
@@ -87,9 +87,23 @@ Schemaer hindrer oss i å lagre korrupte data i databasen!
 
 ### Tema 2: Relasjonell programmering
 
-*TODO?*
+Disse idéene om hvordan databaser bør fungere er tett knyttet opp det neste temaet — relasjonell programmering.
+Det var i løpet av konferansen en hel del prat om forskjellige deklarative programmeringspråk, en språkgruppe som setter relasjoner mellom data i høysetet.
 
-*På ELC var det et intro-foredrag om Datalog: "The re-emergence of Datalog" eller noe slikt. Det var også et annet foredag om relasjonell programmering, programmeringspråket Bandicoot, på ELC. Datomic, som Rich Hickey presenterte, bruker en implementasjon av Datalog til å manipulrere og spør på data. Datalog/datomic viker som en smart måte å tilnærme seg akkurat dette problemet på. I tillegg til datalog/datomic har vi også foredragene om lisp-variantene av samme ulla: miniKanren og core.logic (som er en implementasjon av (mini)Kanren i Clojure.*
+*TODO; Noe om Datomic og Datalog*
+
+Et annet språk som ikke hører inn under *datalog-familien*, men som likevel setter den relasjonelle modellen i fokus, er [Bandicoot](http://bandilab.org/specification.html).
+Dette er et språk som har som fokus å gjøre det enkelt å gjøre manipulering og uthenting av relasjonelle data.
+
+*TODO; Noe om funksjoner, og hvordan Bandicoot legger til rette for REST-API mot data.*
+
+Bandicoot har også et [interaktivt test-miljø](http://mingle.io) er en kan leke seg.
+
+Et siste språk absolutt som bør nevnes i denne gruppen er [miniKanren](http://kanren.sourceforge.net/#mini).
+Språket ble presentert i et intet mindre enn [magisk foredrag], der en fikk se hvordan det kan gå når to språknerder får utfolde seg i Scheme.
+miniKanren er en minimal implementasjon av Kanren, et deklarativt logisk programmeringsystem i Scheme med førsteklasses relasjoner.
+Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-dialekter, er programmeringskode også data, noe som kan gi uante muligheter for hva slags spørringer en kan konstruere.
+
 
 ### Tema 3: Transpilering til JS
 
