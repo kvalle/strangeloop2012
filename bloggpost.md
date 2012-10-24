@@ -100,7 +100,7 @@ Dette er et språk som har som fokus å gjøre det enkelt å gjøre manipulering
 Bandicoot har også et [interaktivt test-miljø](http://mingle.io) er en kan leke seg.
 
 Et siste språk absolutt som bør nevnes i denne gruppen er [miniKanren](http://kanren.sourceforge.net/#mini).
-Språket ble presentert i et intet mindre enn [magisk foredrag], der en fikk se hvordan det kan gå når to språknerder får utfolde seg i Scheme.
+Språket ble presentert i et intet mindre enn magisk foredrag, der en fikk se hvordan det kan gå når to språknerder virkelig får utfolde seg i Scheme.
 miniKanren er en minimal implementasjon av Kanren, et deklarativt logisk programmeringsystem i Scheme med førsteklasses relasjoner.
 Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-dialekter, er programmeringskode også data, noe som kan gi uante muligheter for hva slags spørringer en kan konstruere.
 
