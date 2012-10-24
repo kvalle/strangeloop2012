@@ -89,28 +89,21 @@ Schemaer hindrer oss i å lagre korrupte data i databasen!
 
 *TODO?*
 
-	På ELC var det et intro-foredrag om Datalog: "The re-emergence of Datalog" eller noe slikt.
-	Det var også et annet foredag om relasjonell programmering, programmeringspråket Bandicoot, på ELC.
-	Datomic, som Rich Hickey presenterte, bruker en implementasjon av Datalog til å manipulrere og spør på data.
-	Datalog/datomic viker som en smart måte å tilnærme seg akkurat dette problemet på.
-	I tillegg til datalog/datomic har vi også foredragene om lisp-variantene av samme ulla: 
-	miniKanren og core.logic (som er en implementasjon av (mini)Kanren i Clojure.
+*På ELC var det et intro-foredrag om Datalog: "The re-emergence of Datalog" eller noe slikt. Det var også et annet foredag om relasjonell programmering, programmeringspråket Bandicoot, på ELC. Datomic, som Rich Hickey presenterte, bruker en implementasjon av Datalog til å manipulrere og spør på data. Datalog/datomic viker som en smart måte å tilnærme seg akkurat dette problemet på. I tillegg til datalog/datomic har vi også foredragene om lisp-variantene av samme ulla: miniKanren og core.logic (som er en implementasjon av (mini)Kanren i Clojure.*
 
 ### Tema 3: Transpilering til JS
 
-Språk som transpilerer til JS var definitivt hot.
-Det ble presentert flere språk på ELC, i tillegg til Dart, ClojureScript, JVM i JS, etc på selve konferansen.
-Selvsagt i tillegg til Eichs avsluttende keynote om JS's fremtid.
+*Kjetil: Skriver en av dere noe om dette?*
+
+*Språk som transpilerer til JS var definitivt hot. Det ble presentert flere språk på ELC, i tillegg til Dart, ClojureScript, JVM i JS, etc på selve konferansen. Selvsagt i tillegg til Eichs avsluttende keynote om JS's fremtid.*
 
 ### Tema 4: "Re-imagining Your Development Environment"
 
-Med foredrag om Light Table, Catnip, aneditor/anterminal, og Bret Victor's "Taking Off the Blindfold" virker det som om dette også kvalifiserer som et slags tema for konferansen.
-Jeg fikk dessverre ikke sett noen av disse.
-Var dere innom nok til å ha en mening, eller bør vi droppe det fra oversikten?
+*Med foredrag om Light Table, Catnip, aneditor/anterminal, og Bret Victor's "Taking Off the Blindfold" virker det som om dette også kvalifiserer som et slags tema for konferansen. Jeg fikk dessverre ikke sett noen av disse. Var dere innom nok til å ha en mening, eller bør vi droppe det fra oversikten?*
 
-Jøran: Jeg tror vi kan ta det med. Dette henger egentlig tett sammen med funksjonell programmering og dynamiske språk som trend; man programmerer ved hjelp av raskest mulig feedback — og REPL over testing. Jeg er jævelig skeptisk, men folk snakket hvertfall mye om det :).
+*Jøran: Jeg tror vi kan ta det med. Dette henger egentlig tett sammen med funksjonell programmering og dynamiske språk som trend; man programmerer ved hjelp av raskest mulig feedback — og REPL over testing. Jeg er jævelig skeptisk, men folk snakket hvertfall mye om det :).*
 
-*Annet jeg har glemt å ta med?*
+*Kjetil: Alright! Gidder du skrive litt da, Jøran? (Også må vi kanskje finne en bedre tittel...)*
 
 Personlige høydepunkter
 -----------------------
