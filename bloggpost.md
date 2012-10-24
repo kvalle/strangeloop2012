@@ -93,9 +93,13 @@ Schemaer hindrer oss i å lagre korrupte data i databasen!
 
 ### Tema 3: Transpilering til JS
 
-*Kjetil: Skriver en av dere noe om dette?*
+Dette temaet ble sparket i gang allerede i første foredrag på det såkalte *Emerging Languages Camp* som ble arrangert dagen før konferansen startet for fullt.
+Jeremy Ashkenas, skapere av CoffeeScript, pratet om trenden at mange nye språk [transpilerer](http://en.wikipedia.org/wiki/Transpile) til JavaScript.
+Med CoffeeScript som case diskuterte han fordelene med å basere seg på en eksisterende runtime, og noen av begrensningene det gir å måtte definere språket utifra den semantikken som allerede finnes i JS.
 
 *Språk som transpilerer til JS var definitivt hot. Det ble presentert flere språk på ELC, i tillegg til Dart, ClojureScript, JVM i JS, etc på selve konferansen. Selvsagt i tillegg til Eichs avsluttende keynote om JS's fremtid.*
+
+*Kjetil: Skriver en av dere mer om dette?*
 
 ### Tema 4: "Re-imagining Your Development Environment"
 
