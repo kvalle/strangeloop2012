@@ -70,7 +70,7 @@ Et liknende skille finnes i Datomics arkitektur, men her er det kun indekser som
 Ved å dele opp slik kan en eksponere dataene på den måten som er mest effektiv for spørringene, og en sikrer at lesing og skriving av data ikke går i beina på hverandre.
 Det gjør også at en ikke er avhengig av en query engine som ligger sammen med lagringstjenesten, og en kan flytte spørremotoren nærmere klientene eller benytte forskjellige spørremotorer og språk i forskjellige kontekster.
 
-![Marzs definisjon av datasystemer](bilder/marz-data-system.jpg)
+![Marzs definisjon av datasystemer](https://raw.github.com/kvalle/strangeloop2012/master/bilder/marz-data-system.jpg)
 
 <!-- 
 
