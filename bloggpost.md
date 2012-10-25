@@ -37,13 +37,12 @@ Til tross for små forskjeller i fokus og arkitektur, løser begge problemene p�
 Hva er så disse svakhetene med dagens RDBMSer?
 Vel, blant de mange som ble tatt opp, a oss ta en titt på de to viktigste.
 
-**Problem 1: Muterbar tilstand**
+**Problem I: Muterbar tilstand**
 
 Det første, og viktigste, problemet er muterbar tilstand.
 Både Marz og Hickey identifiserer dette som hovedkilden til kompleksitet i systemene vi bruker i dag, og begge forslår løsninger som basserer seg på immutability.
 
 Ikke-muterbare systemer er fundamentalt enklere — vi sitter igjen med kun CR i stedet for CRUD, og den eneste skriveoperasjonen som er igjen blir å legge til nye data.
-
 
 Dette løses ved å introdusere *tid* som et konsept i kontekst av data.
 Alle data som lagres blir stemplet med tidspunktet lagringen skjedde.
@@ -53,7 +52,7 @@ Oppdateringer gjøres i praksis ved å lagre et nytt faktum med et nyere timesta
 Slik tilrettelegges det for at spørringer kan serveres de *nåværende* versjoner av data, mens det også er mulig å grave i historiske data hvis ønskelig.
 Det er mer til dette enn vi har mulighet til å diskutere her, men kort oppsummert minner det svært om måten versjonskontrollsystemer fungerer.
 
-**Problem 2: Sammenblanding av lagring og spørring**
+**Problem II: Sammenblanding av lagring og spørring**
 
 Dette er et spørsmål om normalisering av data.
 Vi ønsker oss å ha dataene våre i pene og ryddige normaliserte former, men blir ofte tvunget til å denormalisere for å få akseptabel ytelse på spørringer.
@@ -70,6 +69,8 @@ Et liknende skille finnes i Datomics arkitektur, men her er det kun indekser som
 
 Ved å dele opp slik kan en eksponere dataene på den måten som er mest effektiv for spørringene, og en sikrer at lesing og skriving av data ikke går i beina på hverandre.
 Det gjør også at en ikke er avhengig av en query engine som ligger sammen med lagringstjenesten, og en kan flytte spørremotoren nærmere klientene eller benytte forskjellige spørremotorer og språk i forskjellige kontekster.
+
+![Marzs definisjon av datasystemer](bilder/marz-data-system.jpg)
 
 <!-- 
 
@@ -107,7 +108,7 @@ Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-
 
 ### Tema 3: Transpilering til JS
 
-Dette temaet ble sparket i gang allerede i første foredrag på det såkalte *Emerging Languages Camp* som ble arrangert dagen før konferansen startet for fullt.
+Dette temaet ble sparket i gang allerede i første foredrag under *Emerging Languages Camp* som ble arrangert dagen før konferansen startet for fullt.
 Jeremy Ashkenas, skapere av CoffeeScript, pratet om trenden at mange nye språk [transpilerer](http://en.wikipedia.org/wiki/Transpile) til JavaScript.
 Med CoffeeScript som case diskuterte han fordelene med å basere seg på en eksisterende runtime, og noen av begrensningene det gir å måtte definere språket utifra den semantikken som allerede finnes i JS.
 
