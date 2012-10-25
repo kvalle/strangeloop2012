@@ -2,7 +2,7 @@ Erfaringer fra Strange Loop 2012
 ================================
 
 I slutten av september i år gikk den fjerde årlige [Strange Loop](https://thestrangeloop.com/) konferansen av stabelen i St. Louis, Missouri. 
-Strange Loop er en leverandøruavhengig konferanse med fokus på nye og voksende teknologier.
+Strange Loop er en leverandøruavhengig konferanse med fokus på nye og voksende teknologier innen for IT-verden.
 Presentasjonene spenner over temaer som programmeringspråk, alternaltive databaser, distribuerte systemer, mobil og web, og mer, og omfatter en blanding av både teknologier som alt er tatt i bruk i industrien og innovative idéer som fortsatt hører hjemme i akademia.
 
 Med foredrag som [We Really Don't Know How To Compute!][sussman-compute] (Gerald J. Sussman) og [Simple Made Easy][hickey-simple] (Rich Hickey) blant fjorårets keynotes hadde vi naturligvis høye forventninger i forkant av konferansen.
@@ -14,11 +14,11 @@ Og hva kan være viktig å ta med seg videre?
 
 ![Hovedscenen på Peabody Opera House](https://raw.github.com/kvalle/strangeloop2012/master/bilder/peabody-opera.jpg)
 
-Overordnede temaer/trender
---------------------------
+Overordnede trender
+-------------------
 
 Enkelte temaer ble nevnt igjen og igjen i forskjellige foredrag.
-Dette er trendene vi føler krystaliserte seg mest tydelig på årets konferanse.
+Dette er trendene vi føler krystaliserte seg tydeligst på årets konferanse.
 
 ### Tema 1: Re-tenking av databasen 
 
@@ -107,14 +107,13 @@ Et annet språk som er verdt å nevne, men som ikke hører hjemme i Datalog-fami
 Dette er et relativt nytt språk som har som fokus å gjøre det enkelt å gjøre manipulering og uthenting av relasjonelle data.
 Språket brukes til å skrive spørringer, ikke ulikt SQL, ved hjelp av relasjonell algebra og sett-baserte operasjoner.
 Forskjellen er at spørringer defineres som funksjoner, og disse kan gjennbrukes i andre spørringer.
-Det som kanskje skiller Bandicoot spørringer i Bandicoot mest fra SQL er at alle funksjoner blir tilordnet en tilhørende URL, og språket har dermed innebygget støtte for å bygge REST-API.
-
+Det som kanskje skiller Bandicoot-spørringer mest fra SQL er at alle funksjoner blir tilordnet en tilhørende URL, og språket dermed har innebygget støtte for å bygge REST-API.
 For den som er nyskjerrig har Bandicoot også et [interaktivt test-miljø](http://mingle.io) en kan leke seg med.
 
 Et siste språk som absolutt bør nevnes i denne gruppen er [miniKanren](http://kanren.sourceforge.net/#mini).
 Språket ble presentert i et intet mindre enn magisk foredrag, der en fikk se hvordan det kan gå når to språknerder virkelig får utfolde seg i Scheme.
 miniKanren er en minimal implementasjon av Kanren, et deklarativt logisk programmeringsystem i Scheme med førsteklasses relasjoner.
-Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-dialekter, er programmeringskode også data, noe som kan gi uante muligheter for hva slags spørringer en kan konstruere.
+Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-dialekter, er programmeringskode også data, noe som kan gi uante muligheter for hva slags spørringer det er mulig å konstruere!
 
 
 ### Tema 3: Transpilering til JS
@@ -138,9 +137,9 @@ Med CoffeeScript som case diskuterte han fordelene med å basere seg på en eksi
 Personlige høydepunkter
 -----------------------
 
-### Johannes
+Utover foredrageene som definerte hovedtrender på konfernansen sitter naturligvis hver av oss også igjen med noen favoritter.
+Dette er våre personlige høydepunkter.
 
-*TODO*
 
 ### Jøran
 
@@ -225,12 +224,17 @@ Høydepunkter var derimot de følgende tre foredragene, presentert i brutalt pri
 PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg også delt [notatene jeg skrev iløpet av konferansen][notater-kjetil] på GitHub.
 
 
+### Johannes
+
+*TODO*
+
+
 Oppsummering
 ------------
 
 *TODO*
 
-Det er også verdt å nevne at videoer av alle foredragene [slippes gradvis de kommende månedene](https://thestrangeloop.com/news/strange-loop-2012-video-schedule).
+Hvis du ble inspirert av noen av foredragene vi har nevnt må det også nevnes at alt ble filmet og [vil bli tilgjengelig på video](https://thestrangeloop.com/news/strange-loop-2012-video-schedule) utover høsten og vinteren.
 
 [datomic]: http://www.datomic.com/
 [hickey-abstract]: https://thestrangeloop.com/sessions/the-database-as-a-value
