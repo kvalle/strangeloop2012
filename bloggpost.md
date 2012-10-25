@@ -91,16 +91,27 @@ Schemaer hindrer oss i å lagre korrupte data i databasen!
 Disse idéene om hvordan databaser bør fungere er tett knyttet opp det neste temaet — relasjonell programmering.
 Det var i løpet av konferansen en hel del prat om forskjellige deklarative programmeringspråk, en språkgruppe som setter relasjoner mellom data i høysetet.
 
-*TODO; Noe om Datomic og Datalog*
+Det hele startet første dagen med et foredrag tok for seg et språk som stammer helt tilbake til slutten av 70-tallet, men som har begynt å komme litt i vinden igjen.
+Språket, [Datalog](), er et regelbasert spørrespråk for relasjonelle data.
+Datalog er basert på et subset av Prolog, men med noen forbedringer.
+Der Prolog er ment som et språk til (forholsvis) generall bruk, er Datalog rettet mot databehandling.
+Noen av forbedringene omfatter at signifikansen på reglenes rekkefølge er betydelig redusert, og at spørringer er garantert å returnere uten å grave seg inn i uendelig rekursjon.
 
-Et annet språk som ikke hører inn under *datalog-familien*, men som likevel setter den relasjonelle modellen i fokus, er [Bandicoot](http://bandilab.org/specification.html).
-Dette er et språk som har som fokus å gjøre det enkelt å gjøre manipulering og uthenting av relasjonelle data.
+Datalog har ingen enkelt referanseimplementasjon, men omfatter en vid familie av språk.
+Et av de nyere tilskuddene til denne gruppen er nettopp Datomic, Rich Hickeys nye databasesystem.
+Datomic bruker Datalog for å gjøre spørringer på data på samme måte som SQL typisk brukes i dagens RDBMS-løsninger.
+En av de største nyvinningene i Datomic i forhold til ren Datalog er indroduksjonen av et grunnleggende konsept om *tid*.
+Dette gjør det enkelt å ikke bare resonere rundt fakta, men også hvordan fakta endrer seg over tid.
 
-*TODO; Noe om funksjoner, og hvordan Bandicoot legger til rette for REST-API mot data.*
+Et annet språk som er verdt å nevne, men som ikke hører hjemme i Datalog-familien er [Bandicoot](http://bandilab.org/specification.html).
+Dette er et relativt nytt språk som har som fokus å gjøre det enkelt å gjøre manipulering og uthenting av relasjonelle data.
+Språket brukes til å skrive spørringer, ikke ulikt SQL, ved hjelp av relasjonell algebra og sett-baserte operasjoner.
+Forskjellen er at spørringer defineres som funksjoner, og disse kan gjennbrukes i andre spørringer.
+Det som kanskje skiller Bandicoot spørringer i Bandicoot mest fra SQL er at alle funksjoner blir tilordnet en tilhørende URL, og språket har dermed innebygget støtte for å bygge REST-API.
 
-Bandicoot har også et [interaktivt test-miljø](http://mingle.io) er en kan leke seg.
+For den som er nyskjerrig har Bandicoot også et [interaktivt test-miljø](http://mingle.io) en kan leke seg med.
 
-Et siste språk absolutt som bør nevnes i denne gruppen er [miniKanren](http://kanren.sourceforge.net/#mini).
+Et siste språk som absolutt bør nevnes i denne gruppen er [miniKanren](http://kanren.sourceforge.net/#mini).
 Språket ble presentert i et intet mindre enn magisk foredrag, der en fikk se hvordan det kan gå når to språknerder virkelig får utfolde seg i Scheme.
 miniKanren er en minimal implementasjon av Kanren, et deklarativt logisk programmeringsystem i Scheme med førsteklasses relasjoner.
 Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-dialekter, er programmeringskode også data, noe som kan gi uante muligheter for hva slags spørringer en kan konstruere.
