@@ -225,8 +225,19 @@ PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg ogs
 
 
 ### Johannes
+1. *Pushing the Limit of Web Browsers (Lars Bak)* 
 
-*TODO*
+Lars Bak går igjennom sin historikk med optimalisering av VMer som sun's HotSpot, tar for seg optimaliseringene i JavaScript i V8 for så å gå videre og presentere motivasjonene bak googles Dart. 
+
+2. *Project Lambda in Java 8 (Daniel Smith)*
+
+Java som programmeringsspråk har langsomt falt etter programmeringsspråk som C# og dynamiske språk. Med Java 8 skal vi endelig få noe av det vi har lengtet etter, som closures og default methods. Daniel Smith introduserer de nye språklige konstruksjonene og forklarer noe av bakgrunnen til hvordan de har blitt. 
+
+3. *RiverTrail - Parallel programming in JavaScript (Stephan Herhut)*
+
+Applikasjoner utviklet i HTML og JavaScript er i stor grad portable og kan kjøres på et svært antall platformer uavhengig av underliggende software og hardware. JavaScript er et sekvensielt språk og kjører i utgangspunktet på en enkelt tråd og kan ikke måle seg i ytelse med native applikasjoner på kalkulatsjonstunge applikasjoner som spill og bildebehandling. Intel, som har mye å tjene på å bryte platformbindingen som finnes på mobile enheter i dag, jobber hart for å få inn støtte for høynivås parallelisering i JavaScript og har introdusert RiverTrail som nå er i Strawman status hos ECMA og mest sannsynlig blir en del av ECMAScript 8. 
+
+Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponnerende demoer.
 
 
 Oppsummering
