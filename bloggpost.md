@@ -225,6 +225,11 @@ PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg ogs
 
 
 ### Johannes
+Preconference day benyttet jeg til til Hadoop og Scalding workshops. Scalding er et Scala API for å kunne skrive MapReduce jobber for Hadoop. Foruten å gjøre det mulig å skrive MapReduce jobber i ordentlig scala gjør Scalding også det mulig å kjøre og teste jobbene uten å kjøre dem på en full Hadoop cluster. 
+
+Ellers er mitt hovedinntrykk av konferansen funksjonell programmering, retenking av databasen, og JavaScript som intermediate language og dets fremtid.
+
+Selv om mange av presentasjonene er litt på siden av det jeg driver med til vanlig, særlig når det kommer til språk, var det veldig inspirerende og nyttig å se andre vinklinger og måter å løse problemer på. Her fikk jeg med meg mye nyttig som jeg kommer til å ta med meg videre, og jeg kommer definitivt til å se mer på funksjonelle språk og forhåpentligvis ta med meg noe av lærdommen tilbake til Java-prosjektene jeg jobber på.
 
 1. *Pushing the Limit of Web Browsers (Lars Bak)* 
 
