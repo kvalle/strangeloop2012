@@ -70,21 +70,7 @@ Et liknende skille finnes i Datomics arkitektur, men her er det kun indekser som
 Ved å dele opp slik kan en eksponere dataene på den måten som er mest effektiv for spørringene, og en sikrer at lesing og skriving av data ikke går i beina på hverandre.
 Det gjør også at en ikke er avhengig av en query engine som ligger sammen med lagringstjenesten, og en kan flytte spørremotoren nærmere klientene eller benytte forskjellige spørremotorer og språk i forskjellige kontekster.
 
-![Marzs definisjon av datasystemer](https://raw.github.com/kvalle/strangeloop2012/master/bilder/marz-data-system.jpg)
-
-<!-- 
-
-**Problem 3: Schemaer er implementert feil**
-
-Alle vet jo at schemaer alltid er i veien.
-De er vanskelige å endre på, altfor restriktive, og dessuten krever de irriterende oppsett og konfigurasjon.
-
-Men dette er problemer knyttet til implementasjonen av schema i dagens RDBMS, ikke til schemaer som konsept. 
-Så hva er et schema egentlig? 
-Det er en funksjon som tar inn en enhet med data og avgjør hvorvidt disse dataene er *gyldige*. 
-Schemaer hindrer oss i å lagre korrupte data i databasen! 
-
--->
+![Marzs definisjon av datasystemer
 
 ### Tema 2: Relasjonell programmering
 
@@ -116,15 +102,32 @@ miniKanren er en minimal implementasjon av Kanren, et deklarativt logisk program
 Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-dialekter, er programmeringskode også data, noe som kan gi uante muligheter for hva slags spørringer det er mulig å konstruere!
 
 
-### Tema 3: Transpilering til JS
+### Tema 3: JS as the runtime of the web
 
 Dette temaet ble sparket i gang allerede i første foredrag under *Emerging Languages Camp* som ble arrangert dagen før konferansen startet for fullt.
 Jeremy Ashkenas, skapere av CoffeeScript, pratet om trenden at mange nye språk [transpilerer](http://en.wikipedia.org/wiki/Transpile) til JavaScript.
 Med CoffeeScript som case diskuterte han fordelene med å basere seg på en eksisterende runtime, og noen av begrensningene det gir å måtte definere språket utifra den semantikken som allerede finnes i JS.
 
-*Språk som transpilerer til JS var definitivt hot. Det ble presentert flere språk på ELC, i tillegg til Dart, ClojureScript, JVM i JS, etc på selve konferansen. Selvsagt i tillegg til Eichs avsluttende keynote om JS's fremtid.*
 
-*Kjetil: Skriver en av dere mer om dette?*
+Lars Bak presenterer mye av arbeidet bak optimaliseringen av V8-motoren og hvordan dette har [pushed the limit of web browsers] (http://www.infoq.com/presentations/Performance-V8-Dart). Dette har igjen ført til at JavaScript har fått en ytelse som gjør det mulig implementere en helt ny klasse web-applikasjoner, men ytelsen i seg selv er ikke godt nok.  Behov for bedre kodestruktur og språk, samt behov for å porte eksisterende applikasjoner har ført til et mangfold av språk som nå transpilerer til JavaScript.
+
+
+
+Lars står selv bak Dart, som i og for seg er ment som en utfordrer til JavaScript, men som transpilerer til JavaScript for portabilitet. I tillegg ble en rekke andre språk presentert i løpet av konferansen, som for eksempel [ELM] (http://elm-lang.org/) og [Roy] (http://roy.brianmckenna.org). I tillegg hadde David Nolen en presentasjon av [ClojureScript] (https://github.com/clojure/clojurescript) og utfordringene med å uttrykke Clojure semantikk i JavaScripts termer.
+
+
+
+
+
+Kanskje enda drøyere er Doppio, en JVM som kjører i JavaScript. Doppio er et forsøk på å bringe språkene som kjører på JVM-en til web-en, og kan kjøre mange eksisterende applikasjoner rett ut av boksen. Flere eksisterende kommandolinje-applikasjoner ble presentert, og for å dra det hele lenger ble Rhino JS motoren demonstrert på Doppio: JavaScript kjørende i Java på Doppio-JVM på JavaScript.
+
+Tanken om å støtte eksisterende applikasjoner i JavaScript ble også tatt opp av Brendan Eich, som blant annet [demonstrerte live spilling] (http://brendaneich.github.com/Strange-Loop-2012/#/33) av [BananaBread](https://developer.mozilla.org/en-US/demos/detail/bananabread), som har tatt Cube 2 sin 3d motor som er skrevet i C++ og transpilert denne til JavaScript.
+
+Eich poengterte nettopp det at JavaScript fremover ikke kun har utviklere, men også kompilatorer, som målgruppe og viser til at ECMAScript 6 offisielle mål er å være et bedre språk for [applications, libraries og code-generators] (http://wiki.ecmascript.org/doku.php?id=harmony:harmony).
+
+> "We had always thought that Java's JVM would be the VM of the web, but it turns out that it's JavaScript. JavaScript's parser does a more efficient job... than the JVM's bytecode verifier."
+>
+> —Doug Crockford
 
 ### Tema 4: "Re-imagining Your Development Environment"
 
@@ -231,6 +234,8 @@ Ellers er mitt hovedinntrykk av konferansen funksjonell programmering, retenking
 
 Selv om mange av presentasjonene er litt på siden av det jeg driver med til vanlig, særlig når det kommer til språk, var det veldig inspirerende og nyttig å se andre vinklinger og måter å løse problemer på. Her fikk jeg med meg mye nyttig som jeg kommer til å ta med meg videre, og jeg kommer definitivt til å se mer på funksjonelle språk og forhåpentligvis ta med meg noe av lærdommen tilbake til Java-prosjektene jeg jobber på.
 
+Mine personlige høydepunkter var:
+
 1. *Pushing the Limit of Web Browsers (Lars Bak)* 
 
 	Lars Bak går igjennom sin historikk med optimalisering av VMer som sun's HotSpot, tar for seg optimaliseringene i JavaScript i V8 for så å gå videre og presentere motivasjonene bak googles Dart. 
@@ -247,7 +252,7 @@ Selv om mange av presentasjonene er litt på siden av det jeg driver med til van
 	JavaScript er et sekvensielt språk og kjører i utgangspunktet på en enkelt tråd og kan ikke måle seg i ytelse med native applikasjoner på kalkulatsjonstunge applikasjoner som spill og bildebehandling. 
 	Intel, som har mye å tjene på å bryte platformbindingen som finnes på mobile enheter i dag, jobber hardt for å få inn støtte for høynivå parallelisering i JavaScript og har introdusert RiverTrail som nå er i Strawman status hos ECMA og mest sannsynlig blir en del av ECMAScript 8. 
 
-Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponnerende demoer.
+	Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponnerende demoer.
 
 
 Oppsummering
