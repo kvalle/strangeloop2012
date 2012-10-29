@@ -254,15 +254,13 @@ Mine personlige høydepunkter var:
 
 	Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponnerende demoer.
 
+Presentasjonene
+----------
+Hvis du ble inspirert av noen av foredragene vi har nevnt må det også nevnes at alt ble filmet og [vil bli tilgjengelig på video](https://thestrangeloop.com/news/strange-loop-2012-video-schedule) utover høsten og vinteren.
 
 Oppsummering
-------------
-
+-------------------
 Strange Loop var fett.
-
----
-
-*PS: Hvis du ble inspirert av noen av foredragene vi har nevnt må det også nevnes at alt ble filmet og [vil bli tilgjengelig på video](https://thestrangeloop.com/news/strange-loop-2012-video-schedule) utover høsten og vinteren.*
 
 [datomic]: http://www.datomic.com/
 [hickey-abstract]: https://thestrangeloop.com/sessions/the-database-as-a-value
