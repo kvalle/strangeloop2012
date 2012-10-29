@@ -245,7 +245,7 @@ Selv om mange av presentasjonene er litt på siden av det jeg driver med til van
 
 	Applikasjoner utviklet i HTML og JavaScript er i stor grad portable og kan kjøres på et svært antall platformer uavhengig av underliggende software og hardware. 
 	JavaScript er et sekvensielt språk og kjører i utgangspunktet på en enkelt tråd og kan ikke måle seg i ytelse med native applikasjoner på kalkulatsjonstunge applikasjoner som spill og bildebehandling. 
-	Intel, som har mye å tjene på å bryte platformbindingen som finnes på mobile enheter i dag, jobber hart for å få inn støtte for høynivås parallelisering i JavaScript og har introdusert RiverTrail som nå er i Strawman status hos ECMA og mest sannsynlig blir en del av ECMAScript 8. 
+	Intel, som har mye å tjene på å bryte platformbindingen som finnes på mobile enheter i dag, jobber hardt for å få inn støtte for høynivå parallelisering i JavaScript og har introdusert RiverTrail som nå er i Strawman status hos ECMA og mest sannsynlig blir en del av ECMAScript 8. 
 
 Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponnerende demoer.
 
