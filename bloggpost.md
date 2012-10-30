@@ -1,9 +1,9 @@
 Erfaringer fra Strange Loop 2012
 ================================
 
-I slutten av september i år gikk den fjerde årlige [Strange Loop](https://thestrangeloop.com/) konferansen av stabelen i St. Louis, Missouri. 
-Strange Loop er en leverandøruavhengig konferanse med fokus på nye og voksende teknologier innen for IT-verden.
-Presentasjonene spenner over temaer som programmeringspråk, alternaltive databaser, distribuerte systemer, mobil og web, og mer, og omfatter en blanding av både teknologier som alt er tatt i bruk i industrien og innovative idéer som fortsatt hører hjemme i akademia.
+I slutten av september gikk den fjerde årlige konferansen [Strange Loop](https://thestrangeloop.com/) av stabelen i St. Louis, Missouri. 
+Strange Loop er en leverandøruavhengig konferanse med fokus på nye og voksende teknologier innenfor IT-verdenen.
+Presentasjonene spenner over temaer som programmeringspråk, alternative databaser, distribuerte systemer, mobil og web, og mer, og omfatter en blanding av både teknologier som alt er tatt i bruk i industrien og innovative idéer som fortsatt hører hjemme i akademia.
 
 Med foredrag som [We Really Don't Know How To Compute!][sussman-compute] (Gerald J. Sussman) og [Simple Made Easy][hickey-simple] (Rich Hickey) blant fjorårets keynotes hadde vi naturligvis høye forventninger i forkant av konferansen.
 
@@ -34,13 +34,13 @@ Løsningene Marz presenterer ligger på det konseptuelle planet, som en rekke id
 Rich Hickey presenterte derimot en mer håndfast løsning, i form av [Datomic][datomic].
 Til tross for små forskjeller i fokus og arkitektur, løser begge problemene på påfallende like måter.
 
-Hva er så disse svakhetene med dagens RDBMSer?
-Vel, blant de mange som ble tatt opp, a oss ta en titt på de to viktigste.
+Hva er så disse svakhetene med dagens RDBMS-er?
+Vel, blant de mange som ble tatt opp, la oss ta en titt på de to viktigste.
 
 **Problem I: Muterbar tilstand**
 
-Det første, og viktigste, problemet er muterbar tilstand.
-Både Marz og Hickey identifiserer dette som hovedkilden til kompleksitet i systemene vi bruker i dag, og begge forslår løsninger som basserer seg på immutability.
+Det første og viktigste problemet er muterbar tilstand.
+Både Marz og Hickey identifiserer dette som hovedkilden til kompleksitet i systemene vi bruker i dag, og begge forslår løsninger som baserer seg på immutability.
 
 Ikke-muterbare systemer er fundamentalt enklere — vi sitter igjen med kun CR i stedet for CRUD, og den eneste skriveoperasjonen som er igjen blir å legge til nye data.
 
@@ -60,7 +60,7 @@ Vi ønsker oss å ha dataene våre i pene og ryddige normaliserte former, men bl
 Dette skyldes måten dagens systemer blander sammen to ansvarsområder: lagring av data, og behandling av spørringer på disse dataene.
 Løsningen er naturligvis å dele opp ansvarsområdene, slik at hver oppgave kan løses på best mulige måte.
 
-Denne separasjonen av lagring og spørring, er også løst på liknende måter i de to systemene.
+Denne separasjonen av lagring og spørring er også løst på liknende måter i de to systemene.
 I Marz sin Lambda Achitecture gjøres spørringer mot såkalte *precomputed views* som lages av dataene.
 Disse er det to typer av: batch views og realtime views.
 Førstnevnte er, som navnet tilsier, oppdatert av batch-jobber som forsøker å holde viewene up to date.
@@ -77,24 +77,24 @@ Det gjør også at en ikke er avhengig av en query engine som ligger sammen med 
 Disse idéene om hvordan databaser bør fungere er tett knyttet opp det neste temaet — relasjonell programmering.
 Det var i løpet av konferansen en hel del prat om forskjellige deklarative programmeringspråk, en språkgruppe som setter relasjoner mellom data i høysetet.
 
-Det hele startet første dagen med et foredrag tok for seg et språk som stammer helt tilbake til slutten av 70-tallet, men som har begynt å komme litt i vinden igjen.
-Språket, [Datalog](), er et regelbasert spørrespråk for relasjonelle data.
-Datalog er basert på et subset av Prolog, men med noen forbedringer.
-Der Prolog er ment som et språk til (forholsvis) generall bruk, er Datalog rettet mot databehandling.
+Det hele startet første dagen med et foredrag som tok for seg et språk som stammer helt tilbake til slutten av 70-tallet, men som har begynt å komme litt i vinden igjen.
+Språket heter [Datalog](), og er et regelbasert spørrespråk for relasjonelle data.
+Det er basert på et subset av Prolog, men med noen forbedringer.
+Der Prolog er ment som et språk til (forholdsvis) generell bruk, er Datalog rettet mot databehandling.
 Noen av forbedringene omfatter at signifikansen på reglenes rekkefølge er betydelig redusert, og at spørringer er garantert å returnere uten å grave seg inn i uendelig rekursjon.
 
 Datalog har ingen enkelt referanseimplementasjon, men omfatter en vid familie av språk.
 Et av de nyere tilskuddene til denne gruppen er nettopp Datomic, Rich Hickeys nye databasesystem.
 Datomic bruker Datalog for å gjøre spørringer på data på samme måte som SQL typisk brukes i dagens RDBMS-løsninger.
-En av de største nyvinningene i Datomic i forhold til ren Datalog er indroduksjonen av et grunnleggende konsept om *tid*.
+En av de største nyvinningene i Datomic i forhold til ren Datalog er introduksjonen av et grunnleggende konsept om *tid*.
 Dette gjør det enkelt å ikke bare resonere rundt fakta, men også hvordan fakta endrer seg over tid.
 
-Et annet språk som er verdt å nevne, men som ikke hører hjemme i Datalog-familien er [Bandicoot](http://bandilab.org/specification.html).
-Dette er et relativt nytt språk som har som fokus å gjøre det enkelt å gjøre manipulering og uthenting av relasjonelle data.
+Et annet språk som er verdt å nevne, men som ikke hører hjemme i Datalog-familien, er [Bandicoot](http://bandilab.org/specification.html).
+Dette er et relativt nytt språk som har som fokus å forenkle manipulering og uthenting av relasjonelle data.
 Språket brukes til å skrive spørringer, ikke ulikt SQL, ved hjelp av relasjonell algebra og sett-baserte operasjoner.
-Forskjellen er at spørringer defineres som funksjoner, og disse kan gjennbrukes i andre spørringer.
+Forskjellen er at spørringer defineres som funksjoner, og disse kan gjenbrukes i andre spørringer.
 Det som kanskje skiller Bandicoot-spørringer mest fra SQL er at alle funksjoner blir tilordnet en tilhørende URL, og språket dermed har innebygget støtte for å bygge REST-API.
-For den som er nyskjerrig har Bandicoot også et [interaktivt test-miljø](http://mingle.io) en kan leke seg med.
+For den som er nysgjerrig har Bandicoot også et [interaktivt test-miljø](http://mingle.io) en kan leke seg med.
 
 Et siste språk som absolutt bør nevnes i denne gruppen er [miniKanren](http://kanren.sourceforge.net/#mini).
 Språket ble presentert i et intet mindre enn magisk foredrag, der en fikk se hvordan det kan gå når to språknerder virkelig får utfolde seg i Scheme.
@@ -172,7 +172,7 @@ Mine høydepunkter inkluderte:
   Den består — enkelt fortalt — av fire deler som alle utgjør en kryptografisk gåte. 
   Med bakgrunn i informasjonssikkerhet synes jeg det var uendelig interessant å høre om hvordan folk har jobbet for å løse disse gåtene — og ikke minst hvilken entusiasme folk viser for det!
 
-  Et foredrag strengt tatt uten relevante faglige meritter for de fleste programmerere, men fortsatt ekstremt underholdende!
+  Det var et foredrag strengt tatt uten relevante faglige meritter for de fleste programmerere, men fortsatt ekstremt underholdende!
 
   Og, hvis du vil ha en utfordring: Den siste gåten er fortsatt ikke løst.
 
@@ -186,7 +186,7 @@ Dagen før konferansen startet for fullt, på *preconference day*, kunne en velg
 Jeg valgte sistnevnte, og tilbrakte en lang dag med svært mange spennende foredrag om alt fra Mozillas nye språk [Rust](http://www.rust-lang.org/) til flere funksjonelle språk som kompilerer til JavaScript.
 Selv om ingen av foredragene fra ELC individuelt sett er blant mine absolutte høydepunkter fra konferansen, var det en svært bra dag.
 
-Høydepunkter var derimot de følgende tre foredragene, presentert i brutalt prioritert rekkefølge:
+Høydepunkter var derimot de følgende tre foredragene, presentert i en brutalt prioritert rekkefølge:
 
 1. *Relational Programming in miniKanren (Daniel Friedman, William Byrd)*
 	
@@ -198,7 +198,7 @@ Høydepunkter var derimot de følgende tre foredragene, presentert i brutalt pri
 	Foredraget var en tour de force av eksempler på akkurat dette, og kuliminerte i en [demonstrasjon][quine-kode] av hvordan miniKanren kan brukes til å generere [quines][quine-wikipedia].
 
 	Uten noen tidligere erfaring med Scheme, og med liten kjennskap til en del av konseptene vi ble presentert for skal jeg være den første til innrømme at jeg tidvis hadde problemer med å følge alt som foregikk på tavla. 
-	Det hindret likevel ikke dette foredraget i å være et av de mest interessante og desidert morsomste på hele konferansen, ikke minst på grunn av foredragholdernes tydelige entusiasme og nærmest barnlige glede over det de pratet om.
+	Det hindret likevel ikke dette foredraget i å være et av de mest interessante og desidert morsomste på hele konferansen, ikke minst på grunn av foredragholdernes tydelige entusiasme og nærmest barnlige glede over det de snakket om.
 
 2. *The Database as a Value (Rich Hickey)*
 	
@@ -216,13 +216,13 @@ Høydepunkter var derimot de følgende tre foredragene, presentert i brutalt pri
 	Groks arkitektur, som er inspirert av cortex, gjør det i stand til å detektere spatial-temporale mønstre på en unik måte.
 	Et annet spennende aspekt er hvordan data representeres basert på idéer fra [sparse coding][sparse-code-wikipedia], noe som gir spennende muligheter for representasjon av semantisk mening — og ikke minst automatisk læring av denne!
 
-PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg også delt [notatene jeg skrev iløpet av konferansen][notater-kjetil] på GitHub.
+PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg også delt [notatene jeg skrev i løpet av konferansen][notater-kjetil] på GitHub.
 
 
 ### Johannes
-Preconference day benyttet jeg til til Hadoop og Scalding workshops. Scalding er et Scala API for å kunne skrive MapReduce jobber for Hadoop. Foruten å gjøre det mulig å skrive MapReduce jobber i ordentlig scala gjør Scalding også det mulig å kjøre og teste jobbene uten å kjøre dem på en full Hadoop cluster. 
+Preconference day benyttet jeg til Hadoop og Scalding workshops. Scalding er et Scala API for å kunne skrive MapReduce-jobber for Hadoop. Foruten å gjøre det mulig å skrive MapReduce-jobber i ordentlig Scala gjør Scalding også det mulig å kjøre og teste jobbene uten å kjøre dem på en full Hadoop cluster. 
 
-Ellers er mitt hovedinntrykk av konferansen funksjonell programmering, retenking av databasen, og JavaScript som intermediate language og dets fremtid.
+Ellers er mine hovedinntrykk av konferansen funksjonell programmering, retenking av databasen, og JavaScript som intermediate language og dets fremtid.
 
 Selv om mange av presentasjonene er litt på siden av det jeg driver med til vanlig, særlig når det kommer til språk, var det veldig inspirerende og nyttig å se andre vinklinger og måter å løse problemer på. Her fikk jeg med meg mye nyttig som jeg kommer til å ta med meg videre, og jeg kommer definitivt til å se mer på funksjonelle språk og forhåpentligvis ta med meg noe av lærdommen tilbake til Java-prosjektene jeg jobber på.
 
@@ -230,21 +230,21 @@ Mine personlige høydepunkter var:
 
 1. *Pushing the Limit of Web Browsers (Lars Bak)* 
 
-	Lars Bak går igjennom sin historikk med optimalisering av VMer som sun's HotSpot, tar for seg optimaliseringene i JavaScript i V8 for så å gå videre og presentere motivasjonene bak googles Dart. 
+	Lars Bak går igjennom sin historikk med optimalisering av VM-er som Suns HotSpot, tar for seg optimaliseringene i JavaScript i V8 for å så gå videre og presentere motivasjonene bak Googles Dart. 
 
 2. *Project Lambda in Java 8 (Daniel Smith)*
 
-	Java som programmeringsspråk har langsomt falt etter programmeringsspråk som C# og dynamiske språk. 
+	Java som programmeringsspråk har langsomt falt etter inntoget av C# og dynamiske språk. 
 	Med Java 8 skal vi endelig få noe av det vi har lengtet etter, som closures og default methods. 
 	Daniel Smith introduserer de nye språklige konstruksjonene og forklarer noe av bakgrunnen til hvordan de har blitt. 
 
 3. *RiverTrail - Parallel programming in JavaScript (Stephan Herhut)*
 
-	Applikasjoner utviklet i HTML og JavaScript er i stor grad portable og kan kjøres på et svært antall platformer uavhengig av underliggende software og hardware. 
-	JavaScript er et sekvensielt språk og kjører i utgangspunktet på en enkelt tråd og kan ikke måle seg i ytelse med native applikasjoner på kalkulatsjonstunge applikasjoner som spill og bildebehandling. 
+	Applikasjoner utviklet i HTML og JavaScript er i stor grad portable og kan kjøres på et stort antall platformer uavhengig av underliggende software og hardware. 
+	JavaScript er et sekvensielt språk og kjører i utgangspunktet på en enkelt tråd og kan ikke måle seg i ytelse med native applikasjoner på kalkulasjonstunge applikasjoner som spill og bildebehandling. 
 	Intel, som har mye å tjene på å bryte platformbindingen som finnes på mobile enheter i dag, jobber hardt for å få inn støtte for høynivå parallelisering i JavaScript og har introdusert RiverTrail som nå er i Strawman status hos ECMA og mest sannsynlig blir en del av ECMAScript 8. 
 
-	Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponnerende demoer.
+	Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponerende demoer.
 
 Presentasjonene
 ----------
@@ -252,7 +252,7 @@ Hvis du ble inspirert av noen av foredragene vi har nevnt må det også nevnes a
 
 Oppsummering
 -------------------
-Strange Loop var fett.
+Strange Loop var *fett*.
 
 [datomic]: http://www.datomic.com/
 [hickey-abstract]: https://thestrangeloop.com/sessions/the-database-as-a-value
