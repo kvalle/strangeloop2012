@@ -108,18 +108,17 @@ Dette temaet ble sparket i gang allerede i første foredrag under *Emerging Lang
 Jeremy Ashkenas, skapere av CoffeeScript, pratet om trenden at mange nye språk [transpilerer](http://en.wikipedia.org/wiki/Transpile) til JavaScript.
 Med CoffeeScript som case diskuterte han fordelene med å basere seg på en eksisterende runtime, og noen av begrensningene det gir å måtte definere språket utifra den semantikken som allerede finnes i JS.
 
+Lars Bak presenterer mye av arbeidet bak optimaliseringen av V8-motoren og hvordan dette har [pushed the limit of web browsers] (http://www.infoq.com/presentations/Performance-V8-Dart). 
+Dette har igjen ført til at JavaScript har fått en ytelse som gjør det mulig implementere en helt ny klasse web-applikasjoner, men ytelsen i seg selv er ikke godt nok.  
+Behov for bedre kodestruktur og språk, samt behov for å porte eksisterende applikasjoner har ført til et mangfold av språk som nå transpilerer til JavaScript.
 
-Lars Bak presenterer mye av arbeidet bak optimaliseringen av V8-motoren og hvordan dette har [pushed the limit of web browsers] (http://www.infoq.com/presentations/Performance-V8-Dart). Dette har igjen ført til at JavaScript har fått en ytelse som gjør det mulig implementere en helt ny klasse web-applikasjoner, men ytelsen i seg selv er ikke godt nok.  Behov for bedre kodestruktur og språk, samt behov for å porte eksisterende applikasjoner har ført til et mangfold av språk som nå transpilerer til JavaScript.
+Lars står selv bak Dart, som i og for seg er ment som en utfordrer til JavaScript, men som transpilerer til JavaScript for portabilitet. 
+I tillegg ble en rekke andre språk presentert i løpet av konferansen, som for eksempel [ELM] (http://elm-lang.org/) og [Roy] (http://roy.brianmckenna.org). 
+I tillegg hadde David Nolen en presentasjon av [ClojureScript] (https://github.com/clojure/clojurescript) og utfordringene med å uttrykke Clojure semantikk i JavaScripts termer.
 
-
-
-Lars står selv bak Dart, som i og for seg er ment som en utfordrer til JavaScript, men som transpilerer til JavaScript for portabilitet. I tillegg ble en rekke andre språk presentert i løpet av konferansen, som for eksempel [ELM] (http://elm-lang.org/) og [Roy] (http://roy.brianmckenna.org). I tillegg hadde David Nolen en presentasjon av [ClojureScript] (https://github.com/clojure/clojurescript) og utfordringene med å uttrykke Clojure semantikk i JavaScripts termer.
-
-
-
-
-
-Kanskje enda drøyere er Doppio, en JVM som kjører i JavaScript. Doppio er et forsøk på å bringe språkene som kjører på JVM-en til web-en, og kan kjøre mange eksisterende applikasjoner rett ut av boksen. Flere eksisterende kommandolinje-applikasjoner ble presentert, og for å dra det hele lenger ble Rhino JS motoren demonstrert på Doppio: JavaScript kjørende i Java på Doppio-JVM på JavaScript.
+Kanskje enda drøyere er Doppio, en JVM som kjører i JavaScript. 
+Doppio er et forsøk på å bringe språkene som kjører på JVM-en til web-en, og kan kjøre mange eksisterende applikasjoner rett ut av boksen. 
+Flere eksisterende kommandolinje-applikasjoner ble presentert, og for å dra det hele lenger ble Rhino JS motoren demonstrert på Doppio: JavaScript kjørende i Java på Doppio-JVM på JavaScript.
 
 Tanken om å støtte eksisterende applikasjoner i JavaScript ble også tatt opp av Brendan Eich, som blant annet [demonstrerte live spilling] (http://brendaneich.github.com/Strange-Loop-2012/#/33) av [BananaBread](https://developer.mozilla.org/en-US/demos/detail/bananabread), som har tatt Cube 2 sin 3d motor som er skrevet i C++ og transpilert denne til JavaScript.
 
@@ -129,13 +128,6 @@ Eich poengterte nettopp det at JavaScript fremover ikke kun har utviklere, men o
 >
 > —Doug Crockford
 
-### Tema 4: "Re-imagining Your Development Environment"
-
-*Med foredrag om Light Table, Catnip, aneditor/anterminal, og Bret Victor's "Taking Off the Blindfold" virker det som om dette også kvalifiserer som et slags tema for konferansen. Jeg fikk dessverre ikke sett noen av disse. Var dere innom nok til å ha en mening, eller bør vi droppe det fra oversikten?*
-
-*Jøran: Jeg tror vi kan ta det med. Dette henger egentlig tett sammen med funksjonell programmering og dynamiske språk som trend; man programmerer ved hjelp av raskest mulig feedback — og REPL over testing. Jeg er jævelig skeptisk, men folk snakket hvertfall mye om det :).*
-
-*Kjetil: Alright! Gidder du skrive litt da, Jøran? (Også må vi kanskje finne en bedre tittel...)*
 
 Personlige høydepunkter
 -----------------------
