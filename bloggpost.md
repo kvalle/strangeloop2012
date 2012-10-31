@@ -78,7 +78,7 @@ Disse idéene om hvordan databaser bør fungere er tett knyttet opp det neste te
 Det var i løpet av konferansen en hel del prat om forskjellige deklarative programmeringspråk, en språkgruppe som setter relasjoner mellom data i høysetet.
 
 Det hele startet første dagen med et foredrag som tok for seg et språk som stammer helt tilbake til slutten av 70-tallet, men som har begynt å komme litt i vinden igjen.
-Språket heter [Datalog](), og er et regelbasert spørrespråk for relasjonelle data.
+Språket heter [Datalog](http://en.wikipedia.org/wiki/Datalog), og er et regelbasert spørrespråk for relasjonelle data.
 Det er basert på et subset av Prolog, men med noen forbedringer.
 Der Prolog er ment som et språk til (forholdsvis) generell bruk, er Datalog rettet mot databehandling.
 Noen av forbedringene omfatter at signifikansen på reglenes rekkefølge er betydelig redusert, og at spørringer er garantert å returnere uten å grave seg inn i uendelig rekursjon.
