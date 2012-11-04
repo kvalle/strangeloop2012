@@ -40,7 +40,7 @@ Vel, blant de mange som ble tatt opp, la oss ta en titt på de to viktigste.
 **Problem I: Muterbar tilstand**
 
 Det første og viktigste problemet er muterbar tilstand.
-Både Marz og Hickey identifiserer dette som hovedkilden til kompleksitet i systemene vi bruker i dag, og begge forslår løsninger som baserer seg på immutability.
+Både Marz og Hickey identifiserer dette som hovedkilden til kompleksitet i systemene vi bruker i dag, og begge foreslår løsninger som baserer seg på immutability.
 
 Ikke-muterbare systemer er fundamentalt enklere — vi sitter igjen med kun CR i stedet for CRUD, og den eneste skriveoperasjonen som er igjen blir å legge til nye data.
 
@@ -55,17 +55,16 @@ Det er mer til dette enn vi har mulighet til å diskutere her, men kort oppsumme
 **Problem II: Sammenblanding av lagring og spørring**
 
 Dette er et spørsmål om normalisering av data.
-Vi ønsker oss å ha dataene våre i pene og ryddige normaliserte former, men blir ofte tvunget til å denormalisere for å få akseptabel ytelse på spørringer.
+Vi ønsker å ha dataene våre i pene og ryddige normaliserte former, men blir ofte tvunget til å denormalisere for å få akseptabel ytelse på spørringer.
 
 Dette skyldes måten dagens systemer blander sammen to ansvarsområder: lagring av data, og behandling av spørringer på disse dataene.
 Løsningen er naturligvis å dele opp ansvarsområdene, slik at hver oppgave kan løses på best mulige måte.
 
-Denne separasjonen av lagring og spørring er også løst på liknende måter i de to systemene.
-I Marz sin Lambda Achitecture gjøres spørringer mot såkalte *precomputed views* som lages av dataene.
+I Marz sin Lambda Achitecture gjøres spørringer mot såkalte *precomputed views* av dataene.
 Disse er det to typer av: batch views og realtime views.
 Førstnevnte er, som navnet tilsier, oppdatert av batch-jobber som forsøker å holde viewene up to date.
 De nyeste dataene, det som enda ikker er oppdatert i batch views, holdes i realtime views som kontinuerlig oppdateres.
-Et liknende skille finnes i Datomics arkitektur, men her er det kun indekser som oppdateres på denne måten.
+Et liknende skille gjøres i Datomics arkitektur, men her er det kun indekser som oppdateres på denne måten.
 
 Ved å dele opp slik kan en eksponere dataene på den måten som er mest effektiv for spørringene, og en sikrer at lesing og skriving av data ikke går i beina på hverandre.
 Det gjør også at en ikke er avhengig av en query engine som ligger sammen med lagringstjenesten, og en kan flytte spørremotoren nærmere klientene eller benytte forskjellige spørremotorer og språk i forskjellige kontekster.
@@ -79,17 +78,17 @@ Det var i løpet av konferansen en hel del prat om forskjellige deklarative prog
 
 Det hele startet første dagen med et foredrag som tok for seg et språk som stammer helt tilbake til slutten av 70-tallet, men som har begynt å komme litt i vinden igjen.
 Språket heter [Datalog](http://en.wikipedia.org/wiki/Datalog), og er et regelbasert spørrespråk for relasjonelle data.
-Det er basert på et subset av Prolog, men med noen forbedringer.
+Datalog er basert på et subset av Prolog, men med noen forbedringer.
 Der Prolog er ment som et språk til (forholdsvis) generell bruk, er Datalog rettet mot databehandling.
 Noen av forbedringene omfatter at signifikansen på reglenes rekkefølge er betydelig redusert, og at spørringer er garantert å returnere uten å grave seg inn i uendelig rekursjon.
 
-Datalog har ingen enkelt referanseimplementasjon, men omfatter en vid familie av språk.
+Datalog har ikke én enkelt referanseimplementasjon, men omfatter en vid familie av språk.
 Et av de nyere tilskuddene til denne gruppen er nettopp Datomic, Rich Hickeys nye databasesystem.
 Datomic bruker Datalog for å gjøre spørringer på data på samme måte som SQL typisk brukes i dagens RDBMS-løsninger.
 En av de største nyvinningene i Datomic i forhold til ren Datalog er introduksjonen av et grunnleggende konsept om *tid*.
 Dette gjør det enkelt å ikke bare resonere rundt fakta, men også hvordan fakta endrer seg over tid.
 
-Et annet språk som er verdt å nevne, men som ikke hører hjemme i Datalog-familien, er [Bandicoot](http://bandilab.org/specification.html).
+Et annet språk som ble presentert under konferansen, men som ikke hører hjemme i Datalog-familien, er [Bandicoot](http://bandilab.org/specification.html).
 Dette er et relativt nytt språk som har som fokus å forenkle manipulering og uthenting av relasjonelle data.
 Språket brukes til å skrive spørringer, ikke ulikt SQL, ved hjelp av relasjonell algebra og sett-baserte operasjoner.
 Forskjellen er at spørringer defineres som funksjoner, og disse kan gjenbrukes i andre spørringer.
@@ -105,24 +104,24 @@ Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-
 ### Tema 3: JS as the runtime of the web
 
 Dette temaet ble sparket i gang allerede i første foredrag under *Emerging Languages Camp* som ble arrangert dagen før konferansen startet for fullt.
-Jeremy Ashkenas, skapere av CoffeeScript, pratet om trenden at mange nye språk [transpilerer](http://en.wikipedia.org/wiki/Transpile) til JavaScript.
+Jeremy Ashkenas, skaperen av CoffeeScript, pratet om trenden at mange nye språk [transpilerer](http://en.wikipedia.org/wiki/Transpile) til JavaScript.
 Med CoffeeScript som case diskuterte han fordelene med å basere seg på en eksisterende runtime, og noen av begrensningene det gir å måtte definere språket utifra den semantikken som allerede finnes i JS.
 
-Lars Bak presenterer mye av arbeidet bak optimaliseringen av V8-motoren og hvordan dette har [pushed the limit of web browsers] (http://www.infoq.com/presentations/Performance-V8-Dart). 
+Lars Bak presenterer mye av arbeidet bak optimaliseringen av V8-motoren og hvordan dette har [pushed the limit of web browsers](http://www.infoq.com/presentations/Performance-V8-Dart). 
 Dette har igjen ført til at JavaScript har fått en ytelse som gjør det mulig implementere en helt ny klasse web-applikasjoner, men ytelsen i seg selv er ikke godt nok.  
 Behov for bedre kodestruktur og språk, samt behov for å porte eksisterende applikasjoner har ført til et mangfold av språk som nå transpilerer til JavaScript.
 
-Lars står selv bak Dart, som i og for seg er ment som en utfordrer til JavaScript, men som transpilerer til JavaScript for portabilitet. 
-I tillegg ble en rekke andre språk presentert i løpet av konferansen, som for eksempel [ELM] (http://elm-lang.org/) og [Roy] (http://roy.brianmckenna.org). 
-I tillegg hadde David Nolen en presentasjon av [ClojureScript] (https://github.com/clojure/clojurescript) og utfordringene med å uttrykke Clojure semantikk i JavaScripts termer.
+Lars står selv bak Dart, som i og for seg er ment som en utfordrer til JavaScript, men som også transpilerer til JavaScript for portabilitet. 
+I tillegg ble en rekke andre språk presentert i løpet av konferansen, som for eksempel de funksjonelle språkene [ELM](http://elm-lang.org/) og [Roy](http://roy.brianmckenna.org). 
+David Nolen også en presentasjon av [ClojureScript](https://github.com/clojure/clojurescript) og utfordringene med å uttrykke Clojure sin semantikk i JavaScripts termer.
 
 Kanskje enda drøyere er Doppio, en JVM som kjører i JavaScript. 
 Doppio er et forsøk på å bringe språkene som kjører på JVM-en til web-en, og kan kjøre mange eksisterende applikasjoner rett ut av boksen. 
-Flere eksisterende kommandolinje-applikasjoner ble presentert, og for å dra det hele lenger ble Rhino JS motoren demonstrert på Doppio: JavaScript kjørende i Java på Doppio-JVM på JavaScript.
+Flere eksisterende kommandolinje-applikasjoner ble presentert, og for å dra det hele lenger ble Rhino JS motoren demonstrert på Doppio: *JavaScript kjørende i Java på Doppio-JVM på JavaScript*.
 
-Tanken om å støtte eksisterende applikasjoner i JavaScript ble også tatt opp av Brendan Eich, som blant annet [demonstrerte live spilling] (http://brendaneich.github.com/Strange-Loop-2012/#/33) av [BananaBread](https://developer.mozilla.org/en-US/demos/detail/bananabread), som har tatt Cube 2 sin 3d motor som er skrevet i C++ og transpilert denne til JavaScript.
+Tanken om å støtte eksisterende applikasjoner i JavaScript ble også tatt opp av Brendan Eich, som blant annet [demonstrerte live spilling](http://brendaneich.github.com/Strange-Loop-2012/#/33) av [BananaBread](https://developer.mozilla.org/en-US/demos/detail/bananabread), som har tatt Cube 2 sin 3d motor som er skrevet i C++ og transpilert denne til JavaScript.
 
-Eich poengterte nettopp det at JavaScript fremover ikke kun har utviklere, men også kompilatorer, som målgruppe og viser til at ECMAScript 6 offisielle mål er å være et bedre språk for [applications, libraries og code-generators] (http://wiki.ecmascript.org/doku.php?id=harmony:harmony).
+Eich poengterte nettopp det at JavaScript fremover ikke kun har utviklere, men også kompilatorer, som målgruppe og viser til at et av de offisielle målene for ECMAScript 6 er å være et bedre språk for [applications, libraries og code-generators](http://wiki.ecmascript.org/doku.php?id=harmony:harmony).
 
 > "We had always thought that Java's JVM would be the VM of the web, but it turns out that it's JavaScript. JavaScript's parser does a more efficient job... than the JVM's bytecode verifier."
 >
@@ -142,7 +141,7 @@ Jeg innledet oppholdet med to sesjoner training i JavaScript, Backbone og Coffee
 
 Mitt hovedinntrykk av konferansen er: Språk. Gjennom mine fire år som programmerer har jeg alltid sett programmeringsspråk som verktøy, men her ble jeg eksponert for en kultur der programmeringsspråk former hvordan man tenker på problemer. Jeg har leflet litt med funksjonell programmering tidligere, men jeg ser at jeg har veldig mye å lære.
 
-Og på StrangeLoop2012 var det et språk som gjaldt: Clojure. For en Java-utvikler var det tidvis mye å ta innover seg, men jeg tror det er ekstremt sunt å bli eksponert for en annen kultur innimellom.
+Og på Strange Loop 2012 var det et språk som gjaldt: Clojure. For en Java-utvikler var det tidvis mye å ta innover seg, men jeg tror det er ekstremt sunt å bli eksponert for en annen kultur innimellom.
 
 Mine høydepunkter inkluderte:
 
@@ -182,7 +181,7 @@ Du kan være i gang med å skrive Clojure om få minutter!
 
 ### Kjetil
 
-Dagen før konferansen startet for fullt, på *preconference day*, kunne en velge mellom å delta på en rekke forskjellige workshops, eller den såkalte [Emerging Languages Bootcamp][elc] (ELC).
+Dagen før konferansen startet for fullt, på *preconference day*, kunne en velge mellom å delta på en rekke forskjellige workshops, eller å være med på [Emerging Languages Bootcamp][elc] (ELC).
 Jeg valgte sistnevnte, og tilbrakte en lang dag med svært mange spennende foredrag om alt fra Mozillas nye språk [Rust](http://www.rust-lang.org/) til flere funksjonelle språk som kompilerer til JavaScript.
 Selv om ingen av foredragene fra ELC individuelt sett er blant mine absolutte høydepunkter fra konferansen, var det en svært bra dag.
 
@@ -192,7 +191,7 @@ Høydepunkter var derimot de følgende tre foredragene, presentert i en brutalt 
 	
 	miniKanren er kort fortalt en forenklet versjon av [KANREN][kanren], et system for logisk [deklarativ programmering][deklarativ-wikipedia] implementert i Scheme.
 
-	Sentralt i foredraget var idéen om at slike programmer som er basert på relasjoner er fleksible nok til å jobbe "baklengs" — ikke bare kan de trekke konklusjoner basert på data, men de kan komme opp med data som underbygger en gitt konklusjon basert på relasjonene.
+	Sentralt i foredraget var idéen om at denne typen programmer (som er basert på relasjoner) er fleksible nok til å jobbe "baklengs" — ikke bare kan de trekke konklusjoner basert på data, men de kan komme opp med data som underbygger en gitt konklusjon basert på relasjonene.
 	Og siden kode er data i Lisp innebærer dette naturligvis at vi også kan generere kode på samme måte!
 
 	Foredraget var en tour de force av eksempler på akkurat dette, og kuliminerte i en [demonstrasjon][quine-kode] av hvordan miniKanren kan brukes til å generere [quines][quine-wikipedia].
@@ -208,7 +207,7 @@ Høydepunkter var derimot de følgende tre foredragene, presentert i en brutalt 
 3. *Computing Like the Brain (Jeff Hawkins)*
 
 	Med interesse for både hjernen og maskinlæring var jeg jo nødt til å like dette foredraget.
-	Jeg hadde tidligere lest om [Jeffs modell av hvordan neocortex fungerer][on-intelligence], og i dette foredraget forklarte han hvordan de i Numenta bygger et imponerende datasystem basert på denne modellen.
+	Jeg hadde tidligere lest om [Jeffs modell av hvordan neocortex fungerer][on-intelligence], og i dette foredraget forklarte han hvordan de i Numenta bygger et imponerende datasystem basert på disse tankene.
 	
 	Systemet de har bygget, [Grok][what-is-grok], er en tjeneste som overvåker datastrømmer og automatisk bygger og oppdaterer modeller basert på disse.
 	Modellene bruker Grok til å detektere avvik og å forutsi fremtidige data i strømmen.
@@ -220,6 +219,7 @@ PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg ogs
 
 
 ### Johannes
+
 Preconference day benyttet jeg til Hadoop og Scalding workshops. Scalding er et Scala API for å kunne skrive MapReduce-jobber for Hadoop. Foruten å gjøre det mulig å skrive MapReduce-jobber i ordentlig Scala gjør Scalding også det mulig å kjøre og teste jobbene uten å kjøre dem på en full Hadoop cluster. 
 
 Ellers er mine hovedinntrykk av konferansen funksjonell programmering, retenking av databasen, og JavaScript som intermediate language og dets fremtid.
@@ -247,12 +247,14 @@ Mine personlige høydepunkter var:
 	Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponerende demoer.
 
 Presentasjonene
-----------
-Hvis du ble inspirert av noen av foredragene vi har nevnt må det også nevnes at alt ble filmet og [vil bli tilgjengelig på video](https://thestrangeloop.com/news/strange-loop-2012-video-schedule) utover høsten og vinteren.
+---------------
+
+Hvis du ble inspirert av noen av foredragene vi har beskrevet over må det også nevnes at alt ble filmet og [vil bli tilgjengelig på video](https://thestrangeloop.com/news/strange-loop-2012-video-schedule) utover høsten og vinteren.
 
 Oppsummering
--------------------
-Strange Loop var *fett*.
+------------------------
+
+Strange Loop var **fett**.
 
 [datomic]: http://www.datomic.com/
 [hickey-abstract]: https://thestrangeloop.com/sessions/the-database-as-a-value
