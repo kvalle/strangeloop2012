@@ -1,6 +1,3 @@
-Erfaringer fra Strange Loop 2012
-================================
-
 I slutten av september gikk den fjerde årlige konferansen [Strange Loop](https://thestrangeloop.com/) av stabelen i St. Louis, Missouri. 
 Strange Loop er en leverandøruavhengig konferanse med fokus på nye og voksende teknologier innenfor IT-verdenen.
 Presentasjonene spenner over temaer som programmeringspråk, alternative databaser, distribuerte systemer, mobil og web, og mer, og omfatter en blanding av både teknologier som alt er tatt i bruk i industrien og innovative idéer som fortsatt hører hjemme i akademia.
@@ -14,13 +11,12 @@ Og hva kan være viktig å ta med seg videre?
 
 ![Hovedscenen på Peabody Opera House](https://raw.github.com/kvalle/strangeloop2012/master/bilder/peabody-opera.jpg)
 
-Overordnede trender
--------------------
+# Overordnede trender
 
 Enkelte temaer ble nevnt igjen og igjen i forskjellige foredrag.
 Dette er trendene vi føler krystaliserte seg tydeligst på årets konferanse.
 
-### Tema 1: Re-tenking av databasen 
+## Tema 1: Re-tenking av databasen 
 
 Et av temaene under konferansen var idéen om at dagens databasesystemer er altfor dårlige.
 De to viktigste foredragene under dette temaet var Nathan Marz med [Runaway complexity in Big Data... and a plan to stop it][marz-abstract] og Rich Hickey sitt [The Database as a Value][hickey-abstract].
@@ -71,7 +67,7 @@ Det gjør også at en ikke er avhengig av en query engine som ligger sammen med 
 
 ![Marzs definisjon av datasystemer](https://raw.github.com/kvalle/strangeloop2012/master/bilder/marz-data-system.jpg)
 
-### Tema 2: Relasjonell programmering
+## Tema 2: Relasjonell programmering
 
 Disse idéene om hvordan databaser bør fungere er tett knyttet opp det neste temaet — relasjonell programmering.
 Det var i løpet av konferansen en hel del prat om forskjellige deklarative programmeringspråk, en språkgruppe som setter relasjoner mellom data i høysetet.
@@ -101,7 +97,7 @@ miniKanren er en minimal implementasjon av Kanren, et deklarativt logisk program
 Noe som skiller dette språket fra de nevnt over er at i Scheme, som andre lisp-dialekter, er programmeringskode også data, noe som kan gi uante muligheter for hva slags spørringer det er mulig å konstruere!
 
 
-### Tema 3: JS as the runtime of the web
+## Tema 3: JS as the runtime of the web
 
 Dette temaet ble sparket i gang allerede i første foredrag under *Emerging Languages Camp* som ble arrangert dagen før konferansen startet for fullt.
 Jeremy Ashkenas, skaperen av CoffeeScript, pratet om trenden at mange nye språk [transpilerer](http://en.wikipedia.org/wiki/Transpile) til JavaScript.
@@ -128,14 +124,13 @@ Eich poengterte nettopp det at JavaScript fremover ikke kun har utviklere, men o
 > —Doug Crockford
 
 
-Personlige høydepunkter
------------------------
+# Personlige høydepunkter
 
 Utover foredrageene som definerte hovedtrender på konfernansen sitter naturligvis hver av oss også igjen med noen favoritter.
 Dette er våre personlige høydepunkter.
 
 
-### Jøran
+## Jøran
 
 Jeg innledet oppholdet med to sesjoner training i JavaScript, Backbone og CoffeeScript. Begge deler falt litt gjennom for min del, da det ble litt i overkant enkle saker. Det er dog likevel hyggelig å få tatt en gjennomgang av ting man kan!
 
@@ -179,7 +174,7 @@ Mine høydepunkter inkluderte:
 Avslutningsvis vil jeg bare tipse deg som har lyst til å se på Clojure om [LightTable](http://app.kodowa.com/playground). 
 Du kan være i gang med å skrive Clojure om få minutter! 
 
-### Kjetil
+## Kjetil
 
 Dagen før konferansen startet for fullt, på *preconference day*, kunne en velge mellom å delta på en rekke forskjellige workshops, eller å være med på [Emerging Languages Bootcamp][elc] (ELC).
 Jeg valgte sistnevnte, og tilbrakte en lang dag med svært mange spennende foredrag om alt fra Mozillas nye språk [Rust](http://www.rust-lang.org/) til flere funksjonelle språk som kompilerer til JavaScript.
@@ -218,7 +213,7 @@ Høydepunkter var derimot de følgende tre foredragene, presentert i en brutalt 
 PS: Skulle du være interessert i mer om de forskjellige foredragene har jeg også delt [notatene jeg skrev i løpet av konferansen][notater-kjetil] på GitHub.
 
 
-### Johannes
+## Johannes
 
 Preconference day benyttet jeg til Hadoop og Scalding workshops. Scalding er et Scala API for å kunne skrive MapReduce-jobber for Hadoop. Foruten å gjøre det mulig å skrive MapReduce-jobber i ordentlig Scala gjør Scalding også det mulig å kjøre og teste jobbene uten å kjøre dem på en full Hadoop cluster. 
 
@@ -246,13 +241,13 @@ Mine personlige høydepunkter var:
 
 	Stephan Herhut presenterer RiverTrail, og standardforslaget sammen med imponerende demoer.
 
-Presentasjonene
----------------
+# Presentasjonene
+
 
 Hvis du ble inspirert av noen av foredragene vi har beskrevet over må det også nevnes at alt ble filmet og [vil bli tilgjengelig på video](https://thestrangeloop.com/news/strange-loop-2012-video-schedule) utover høsten og vinteren.
 
-Oppsummering
-------------------------
+# Oppsummering
+
 
 Strange Loop var **fett**.
 
